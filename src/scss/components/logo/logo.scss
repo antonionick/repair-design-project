@@ -1,0 +1,12 @@
+.logo {
+  display: block;
+  margin: 0;
+  font-size: 12px;
+
+  &__link {
+    font-family: FuturaDemiC, sans-serif;
+    color: $brand-color;
+    text-transform: uppercase;
+    @include no-a();
+  }
+}

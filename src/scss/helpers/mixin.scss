@@ -1,0 +1,24 @@
+@mixin size ($width: 100%, $height: auto) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex-content () {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+@mixin no-a () {
+  text-decoration: none;
+}
+
+@mixin change-computing () {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@mixin transition ($property: box-shadow, $time: $regular-time) {
+  transition: $property $time;
+}

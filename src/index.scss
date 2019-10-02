@@ -1,2 +1,15 @@
 @import "~normalize.css";
 @import "~@fortawesome/fontawesome-free";
+@import "assets/fonts/fonts.css";
+
+/*helpers*/
+@import "scss/helpers/variables";
+@import "scss/helpers/mixin";
+
+/*components*/
+@import "scss/components/logo/logo";
+@import "scss/components/phone-number/phone-number";
+
+/*modules*/
+@import "scss/modules/page/page";
+@import "scss/modules/header/header";

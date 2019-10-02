@@ -1,0 +1,43 @@
+.header {
+  background-color: $header-background;
+
+  /*wrapper*/
+  &__wrapper {
+    @include flex-content();
+    justify-content: space-between;
+    align-items: center;
+    height: 57px;
+    padding: 0 18px;
+  }
+
+  /*logo*/
+  &__logo {
+
+  }
+
+  /*nav*/
+  &__nav {
+    display: none;
+  }
+
+  /*info*/
+  &__info {
+    @include flex-content();
+  }
+
+  /*number*/
+  &__number {
+    font-family: FuturaDemiC, sans-serif;
+    font-size: 12px;
+    color: $base-color;
+  }
+
+  /*button*/
+  &__button {
+    display: none;
+  }
+
+  &__button-text {
+
+  }
+}

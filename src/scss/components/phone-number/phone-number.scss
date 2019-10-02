@@ -1,0 +1,15 @@
+.phone-number {
+  @include no-a();
+  border-bottom: 1px solid transparent;
+  @include transition(color);
+  @include transition(border-bottom);
+
+  &:hover {
+    color: $brand-color;
+    border-bottom: 1px solid $brand-color;
+  }
+
+  &:active {
+    border-bottom: 1px solid transparent;
+  }
+}
