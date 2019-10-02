@@ -27,7 +27,7 @@
 
   /*number*/
   &__number {
-    font-family: FuturaDemiC, sans-serif;
+    @include futuraDemic();
     font-size: 12px;
     color: $base-color;
   }

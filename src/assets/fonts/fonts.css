@@ -1,7 +1,26 @@
-/*FuturaDemic*/
+/*Futura*/
 @font-face {
 	font-family: "FuturaDemiC";
 	src: local("FuturaDemiC"),
 		url("FuturaDemic/FuturaDemiC.ttf");
-	font-weight: normal;
+}
+
+@font-face {
+	font-family: "FuturaBookC";
+	src: local("FuturaBookC"),
+		url("FuturaBook/FuturaBookC.ttf");
+}
+
+/*Yeseva One*/
+@font-face {
+	font-family: "Yeseva One";
+	src: local("YesevaOne-Regular"),
+		url("YesevaOne/YesevaOne-Regular.ttf");
+}
+
+/*Josefin Sans*/
+@font-face {
+	font-family: "Josefin";
+	src: local("josefinsans"),
+	url("JosefinSans/josefinsans.ttf");
 }

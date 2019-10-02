@@ -22,3 +22,11 @@
 @mixin transition ($property: box-shadow, $time: $regular-time) {
   transition: $property $time;
 }
+
+@mixin futuraDemic () {
+  font-family: FuturaDemiC, Josefin, sans-serif;
+}
+
+@mixin futuraBook () {
+  font-family: FuturaBookC, Josefin, sans-serif;
+}

@@ -1,0 +1,124 @@
+.present {
+  background: $accent-color;
+
+  /*wrapper*/
+  &__wrapper {
+    @include flex-content();
+  }
+
+  /*info*/
+  &__info {
+    position: relative;
+    @include flex-content();
+    @include change-computing();
+    flex-flow: column;
+    justify-content: center;
+    order: 2;
+    min-height: 476px;
+    width: 100%;
+    padding: 0 18px;
+    background: no-repeat url("assets/img/present-mobile.png");
+    background-size: cover;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: .6;
+    }
+  }
+
+  &__title,
+  &__text,
+  &__buttons {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    margin: 20px 0;
+    font-family: "Yeseva One", cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 30px;
+    color: $base-color;
+    text-transform: uppercase;
+
+    &_brand {
+      color: $brand-color;
+    }
+  }
+
+  &__text {
+    @include futuraBook();
+    max-width: 300px;
+    max-height: 100px;
+    margin: 0 0 25px 0;
+    font-size: 18px;
+    line-height: 24px;
+    color: $base-color;
+  }
+
+  &__buttons {
+    @include flex-content();
+    @include change-computing();
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    height: 128px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 51px;
+    font-size: 13px;
+
+    &_transparent {
+      @include transition(color);
+      @include transition(border);
+      background-color: transparent;
+      border: 1px solid $base-color;
+
+      &:hover {
+        color: $brand-color;
+        border: 1px solid $brand-color;
+      }
+
+      &:active {
+        color: $base-color;
+        border: 1px solid $base-color;
+      }
+    }
+  }
+
+  /*soc-network*/
+  &__soc-network {
+    display: none;
+    order: 1;
+  }
+
+  &__soc-network-text {
+
+  }
+
+  /*scroll*/
+  &__scroll {
+    display: none;
+  }
+
+  &__scroll-text {
+
+  }
+
+  &__scroll-item {
+
+  }
+}

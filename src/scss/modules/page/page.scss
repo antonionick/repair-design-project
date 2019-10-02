@@ -2,4 +2,8 @@
   @include change-computing();
   max-width: $base-width;
   margin: 0 auto;
+
+  &__br {
+    display: block;
+  }
 }

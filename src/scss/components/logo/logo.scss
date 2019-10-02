@@ -4,9 +4,18 @@
   font-size: 12px;
 
   &__link {
-    font-family: FuturaDemiC, sans-serif;
+    @include futuraDemic();
+    @include no-a();
     color: $brand-color;
     text-transform: uppercase;
-    @include no-a();
+    @include transition(text-shadow);
+
+    &:hover {
+      text-shadow: -1px 4px 3px black;
+    }
+
+    &:active {
+      text-shadow: none;
+    }
   }
 }
