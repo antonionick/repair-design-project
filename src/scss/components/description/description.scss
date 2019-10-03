@@ -1,0 +1,28 @@
+.description {
+  @include flex-content();
+  @include change-computing();
+  @include size();
+  flex-flow: row wrap;
+
+  /*item*/
+  &__item {
+    @include flex-content();
+    @include change-computing();
+    flex: 0 1 50%;
+    flex-flow: column;
+    align-items: stretch;
+  }
+
+  /*title*/
+  &__title {
+    @include change-computing();
+    @include yesevaOne();
+    text-transform: uppercase;
+  }
+
+  /*text*/
+  &__text {
+    @include change-computing();
+    @include futuraBook();
+  }
+}

@@ -1,32 +1,57 @@
-@mixin size ($width: 100%, $height: auto) {
+/*size*/
+@mixin size ($width: 100%, $height: $width) {
   width: $width;
   height: $height;
 }
 
+@mixin maxSize($max-width: none, $max-height: none) {
+  max-width: $max-width;
+  max-height: $max-height;
+}
+
+@mixin minSize($min-width: 0, $min-height: 0) {
+  min-width: $min-width;
+  min-height: $min-height;
+}
+
+/*flex*/
 @mixin flex-content () {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
 }
 
+/*text-decoration*/
 @mixin no-a () {
   text-decoration: none;
 }
 
+/*box-sizing overflow*/
 @mixin change-computing () {
   box-sizing: border-box;
   overflow: hidden;
 }
 
+/*transition*/
 @mixin transition ($property: box-shadow, $time: $regular-time) {
   transition: $property $time;
 }
 
+/*fonts*/
 @mixin futuraDemic () {
   font-family: FuturaDemiC, Josefin, sans-serif;
 }
 
 @mixin futuraBook () {
   font-family: FuturaBookC, Josefin, sans-serif;
+}
+
+@mixin yesevaOne () {
+  font-family: Yeseva One, cursive;
+}
+
+/*padding*/
+@mixin basePadding() {
+  padding: $base-padding;
 }

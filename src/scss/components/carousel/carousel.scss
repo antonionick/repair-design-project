@@ -1,0 +1,24 @@
+.carousel {
+  @include change-computing();
+  @include size();
+  position: relative;
+
+  /*wrapper*/
+  &__wrapper {
+    @include flex-content();
+    @include change-computing();
+    @include size();
+    overflow: visible;
+  }
+
+  /*img*/
+  &__img {
+    @include maxSize(100%, 100%);
+    @include size(100%);
+  }
+
+  /*button*/
+  &__button {
+    position: absolute;
+  }
+}

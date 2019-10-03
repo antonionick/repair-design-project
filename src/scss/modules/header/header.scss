@@ -1,13 +1,13 @@
 .header {
-  background-color: $header-background;
+  background-color: $base-background;
 
   /*wrapper*/
   &__wrapper {
     @include flex-content();
+    @include size(100%, 57px);
+    @include basePadding();
     justify-content: space-between;
     align-items: center;
-    height: 57px;
-    padding: 0 18px;
   }
 
   /*logo*/

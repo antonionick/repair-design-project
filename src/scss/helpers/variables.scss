@@ -1,15 +1,18 @@
 /*COLOR*/
 $base-color: white;
-$base-30-color: rgba(255, 255, 255, 0.3);
+$base-30-color: rgba(255, 255, 255, .3);
 $accent-color: #363636;
 $brand-color: #E3B873;
+$brand-50-color: rgba(227, 184, 115, .5);
+$brand-70-color: rgba(227, 184, 115, .7);
 
 /*SIZES*/
 $base-width: 500px;
+$base-padding: 0 18px;
 
 /*MODULES*/
 /*header*/
-$header-background: #252525;
+$base-background: #252525;
 
 /*TIME*/
 $regular-time: .6s;

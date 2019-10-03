@@ -1,18 +1,12 @@
 .button {
   @include change-computing();
   @include futuraDemic();
-  @include transition(color);
   @include no-a();
   color: $base-color;
   background-color: $brand-color;
   outline: none;
 
-  &:hover {
-    cursor: pointer;
-    color: $accent-color;
-  }
-
-  &:active {
-    color: $base-color;
+  &_circle {
+    border-radius: 50%;
   }
 }

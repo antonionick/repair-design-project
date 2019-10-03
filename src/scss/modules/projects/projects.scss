@@ -1,0 +1,154 @@
+.projects {
+  background-color: $base-background;
+
+  /*wrapper*/
+  &__wrapper {
+    @include flex-content();
+    @include basePadding();
+    @include change-computing();
+    flex-flow: column;
+    align-items: center;
+  }
+
+  /*title*/
+  &__title {
+    @include yesevaOne();
+    @include size();
+    order: 1;
+    margin: 36px 0 0;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: -.07em;
+    text-transform: uppercase;
+    color: $brand-color;
+  }
+
+  /*text*/
+  &__text {
+    @include futuraBook();
+    @include change-computing();
+    @include size();
+    @include maxSize(311px);
+    order: 2;
+    margin: 22px 0 0;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: $base-color;
+  }
+
+  /*description*/
+  &__description {
+    margin-top: 36px;
+    order: 4;
+  }
+
+  &__description-item {
+    flex: 0 1 46%;
+    padding-right: 10px;
+
+    &:nth-child(2n) {
+      flex: 0 1 54%;
+    }
+
+    &:first-child,
+    &:nth-child(2) {
+      margin-bottom: 27px;
+    }
+  }
+
+  &__description-title {
+    margin: 0 0 11px 0;
+    font-size: 14px;
+    line-height: 19px;
+    color: $brand-color;
+  }
+
+  &__description-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 19px;
+    color: $base-color;
+  }
+
+  /*list*/
+  &__list {
+    display: none;
+  }
+
+  &__list-item {
+
+    &_button {
+
+      &_previous {
+
+      }
+    }
+
+    &_variant {
+
+      &_current {
+
+      }
+    }
+  }
+
+  /*variants*/
+  &__variants {
+    display: none;
+  }
+
+  &__variants-item {
+
+  }
+
+  /*carousel*/
+  &__carousel {
+    @include maxSize(100%, 241px);
+    order: 3;
+    margin-top: 36px;
+  }
+
+  &__carousel-wrapper {
+    @include size();
+    margin-left: calc(-100% - 21px);
+  }
+
+  &__carousel-button {
+    @include change-computing();
+    @include size(36px);
+    @include transition(box-shadow);
+    top: calc(50% - 18px);
+    left: 14px;
+    padding: 10px 3px 10px 0;
+    color: $base-color;
+    background-color: $brand-color;
+    box-shadow: 0 0 15px $brand-50-color;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 5px $accent-color;
+    }
+
+    &:active {
+      box-shadow: 0 0 15px $brand-50-color;
+    }
+
+    &_right {
+      left: calc(90% - 14px);
+      transform: rotate(180deg);
+    }
+  }
+
+  /*img, carousel img*/
+  &__img {
+    @include size(100%, 241px);
+    margin-right: 21px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

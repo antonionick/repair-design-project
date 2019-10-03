@@ -1,9 +1,15 @@
 .page {
   @include change-computing();
-  max-width: $base-width;
+  @include maxSize($base-width);
   margin: 0 auto;
 
+  /*br*/
   &__br {
     display: block;
+  }
+
+  /*up*/
+  &__up {
+    text-transform: uppercase;
   }
 }
