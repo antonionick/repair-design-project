@@ -26,48 +26,17 @@
   &__video-wrapper {
     @include change-computing();
     @include maxSize(100%, 207px);
-    @include size();
+    @include size(100%, 0);
     position: relative;
     margin-top: 40px;
-
-    &::after {
-      @include size();
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1;
-      background: rgba(0, 0, 0, 0.8);
-    }
+    padding-bottom: 56.25%;
   }
 
   &__video {
-    @include size(100%, 207px);
-    object-fit: cover;
-  }
-
-  &__video-play {
-    @include size(37px);
-    @include transition(box-shadow);
+    @include size();
     position: absolute;
-    top: calc(50% - 18.5px);
-    left: calc(50% - 18.5px);
-    z-index: 3;
-    padding: 13px 0 13px 2px;
-    font-size: 10px;
-    text-align: center;
-    box-shadow: 0 5px 30px $brand-20-color;
-
-    &:hover {
-      cursor: pointer;
-      color: $base-color;
-      box-shadow: 0 0 8px $base-30-color;
-    }
-
-    &:active {
-      box-shadow: 0 5px 30px $brand-20-color;
-    }
+    top: 0;
+    left: 0;
   }
 
   /*line*/

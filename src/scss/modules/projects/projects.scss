@@ -119,6 +119,7 @@
   /*img, carousel img*/
   &__img {
     @include size(100%, 241px);
+    flex: 0 0 100%;
     margin-right: 21px;
 
     &:last-child {

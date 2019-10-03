@@ -124,8 +124,7 @@
 			</h2>
 			<!--video-->
 			<div class="control__video-wrapper">
-				<video class="control__video" poster="assets/img/control-video.png"></video>
-				<span class="button button_circle control__video-play"><i class="fas fa-play"></i></span>
+				<iframe class="control__video" src="https://www.youtube.com/embed/MZqtJ1IrRNI" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 			<!--line-->
 			<span class="control__line"></span>
@@ -142,17 +141,17 @@
 					<!--input-->
 					<div class="form__content">
 						<label class="form__label" for="control-name">name</label>
-						<input class="form__input" id="control-name" type="text" placeholder="What is your name:">
+						<input class="form__input" id="control-name" type="text" placeholder="What is your name:" required>
 					</div>
 					<!--input-->
 					<div class="form__content">
 						<label class="form__label" for="control-number">number</label>
-						<input class="form__input" id="control-number" type="text" placeholder="Your phone number:">
+						<input class="form__input" id="control-number" type="text" placeholder="Your phone number:" required>
 					</div>
 				</div>
 				<!--checkbox wrapper-->
 				<label class="form__checkbox-wrapper">
-					<input type="checkbox" checked>
+					<input type="checkbox" checked required>
 					<!--checkbox-->
 					<span class="form__checkbox"></span>
 					<span class="form__checkbox-text">I agree to the processing of personal data</span>
