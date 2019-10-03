@@ -2,9 +2,19 @@
   @include change-computing();
   @include futuraDemic();
   @include no-a();
+  @include transition(color);
   color: $base-color;
   background-color: $brand-color;
   outline: none;
+
+  &:hover {
+    cursor: pointer;
+    color: $accent-color;
+  }
+
+  &:active {
+    color: $base-color;
+  }
 
   &_circle {
     border-radius: 50%;

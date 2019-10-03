@@ -19,6 +19,29 @@
 
   /*button*/
   &__button {
+    @include change-computing();
+    @include size(36px);
+    @include transition(box-shadow);
     position: absolute;
+    top: calc(50% - 18px);
+    left: 14px;
+    padding: 10px 3px 10px 0;
+    color: $base-color;
+    background-color: $brand-color;
+    box-shadow: 0 0 15px $brand-50-color;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 5px $accent-color;
+    }
+
+    &:active {
+      box-shadow: 0 0 15px $brand-50-color;
+    }
+
+    &_right {
+      left: calc(90% - 14px);
+      transform: rotate(180deg);
+    }
   }
 }

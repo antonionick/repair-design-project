@@ -1,5 +1,5 @@
 @import "~normalize.css";
-@import "~@fortawesome/fontawesome-free";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import "assets/fonts/fonts.css";
 
 /*helpers*/
@@ -12,9 +12,11 @@
 @import "scss/components/button/button";
 @import "scss/components/description/description";
 @import "scss/components/carousel/carousel";
+@import "scss/components/form/form";
 
 /*modules*/
 @import "scss/modules/page/page";
 @import "scss/modules/header/header";
 @import "scss/modules/present/present";
 @import "scss/modules/projects/projects";
+@import "scss/modules/control/control";

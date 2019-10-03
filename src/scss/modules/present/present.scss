@@ -10,7 +10,7 @@
   &__info {
     @include flex-content();
     @include change-computing();
-    @include maxSize(none, 476px);
+    @include minSize(0, 476px);
     @include size();
     @include basePadding();
     position: relative;
@@ -75,21 +75,11 @@
   }
 
   &__button {
+    @include flex-content();
     @include size(100%, 51px);
-    @include transition(color);
-    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 13px;
-
-    &:hover {
-      cursor: pointer;
-      color: $accent-color;
-    }
-
-    &:active {
-      color: $base-color;
-    }
 
     &_transparent {
       transition: border $regular-time, color $regular-time;

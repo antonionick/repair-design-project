@@ -17,6 +17,7 @@
   &__title {
     @include change-computing();
     @include yesevaOne();
+    font-weight: 400;
     text-transform: uppercase;
   }
 

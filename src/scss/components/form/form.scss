@@ -1,0 +1,127 @@
+.form {
+  @include flex-content();
+  @include change-computing();
+  @include size();
+  flex-flow: column;
+
+  /*title*/
+  &__title {}
+
+  /*content*/
+  &__content-wrapper {
+    @include flex-content();
+    @include change-computing();
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+  &__content {
+    flex: 0 1 100%;
+  }
+
+  /*label*/
+  &__label {
+    @include futuraBook();
+    font-size: 15px;
+    line-height: 20px;
+    color: $base-50-color;
+    text-transform: capitalize;
+  }
+
+  /*input*/
+  &__input {
+    @include futuraBook();
+    @include size();
+    display: block;
+    font-size: 18px;
+    line-height: 25px;
+    color: $base-color;
+    border: 0;
+    border-bottom: 1px solid $base-color;
+    background-color: transparent;
+    outline: 0;
+
+    &::placeholder {
+      font-size: 18px;
+      color: $base-color;
+    }
+  }
+
+  /*checkbox*/
+  &__checkbox-wrapper {
+    @include flex-content();
+    @include change-computing();
+    align-items: center;
+    margin-top: 21px;
+  }
+
+  input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked {
+      & ~ .form__checkbox {
+        background-color: $brand-color;
+
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__checkbox {
+    @include size(18px);
+    position: relative;
+    margin-right: 8px;
+    background-color: #ccc;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 2px;
+      display: none;
+      width: 4px;
+      height: 8px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__checkbox-text {
+    @include futuraBook();
+    font-size: 16px;
+    line-height: 22px;
+    color: $base-color;
+  }
+
+  /*submit*/
+  &__submit {
+    @include futuraDemic();
+    @include flex-content();
+    @include change-computing();
+    @include size(100%, 51px);
+    @include transition(box-shadow);
+    justify-content: center;
+    align-items: center;
+    margin-top: 62px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 26px;
+    color: $base-color;
+    text-transform: uppercase;
+    background-color: $brand-color;
+    border: 0;
+    outline: 0;
+    box-shadow: 0 10px 20px $brand-10-color;
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+}

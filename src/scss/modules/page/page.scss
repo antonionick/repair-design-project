@@ -12,4 +12,31 @@
   &__up {
     text-transform: uppercase;
   }
+
+  /*title icon*/
+  &__title-icon-wrapper {
+    @include flex-content();
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    &::before {
+      content: "";
+      display: block;
+      @include size(32px, 1px);
+      background-color: $brand-color;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      @include size(32px, 1px);
+      background-color: $brand-color;
+    }
+
+  }
+
+  &__title-icon {
+    margin: 0 11px;
+  }
 }

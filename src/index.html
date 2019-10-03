@@ -106,11 +106,59 @@
 					<img class="carousel__img projects__img" src="assets/img/projects-slider1.png" alt="picture">
 					<img class="carousel__img projects__img" src="assets/img/projects-slider2.png" alt="picture">
 				</picture>
-				<img class="carousel__button button button_circle projects__carousel-button" src="assets/img/left.svg"
+				<img class="carousel__button button button_circle" src="assets/img/left.svg"
 						 alt="left">
-				<img class="carousel__button button_circle projects__carousel-button projects__carousel-button_right"
-						 src="assets/img/left.svg" alt="right">
+				<img class="carousel__button carousel__button_right button_circle" src="assets/img/left.svg" alt="right">
 			</div>
+		</section>
+	</section>
+	<!--control-->
+	<section class="control">
+		<section class="page control__wrapper">
+			<!--title-->
+			<h2 class="control__title">online control
+				<!--title icon-->
+				<span class="page__title-icon-wrapper control__title-icon-wrapper">
+					<img class="page__title-icon" src="assets/img/camera.svg" alt="camera">
+				</span>
+			</h2>
+			<!--video-->
+			<div class="control__video-wrapper">
+				<video class="control__video" poster="assets/img/control-video.png"></video>
+				<span class="button button_circle control__video-play"><i class="fas fa-play"></i></span>
+			</div>
+			<!--line-->
+			<span class="control__line"></span>
+			<!--text-->
+			<p class="control__text">
+				At each facility, a camera is installed that broadcasts the progress of work on the clock. At any time, you can
+				go to our website and monitor the progress of work in your apartment. Y ou can watch the live broadcast from one
+				of our facilities! Leave a request below and you will receive a link to the broadcast.
+			</p>
+			<!--form-->
+			<form class="form control__form" action="#" method="get" id="control">
+				<!--inputs wrapper-->
+				<div class="form__content-wrapper control__form-content-wrapper">
+					<!--input-->
+					<div class="form__content">
+						<label class="form__label" for="control-name">name</label>
+						<input class="form__input" id="control-name" type="text" placeholder="What is your name:">
+					</div>
+					<!--input-->
+					<div class="form__content">
+						<label class="form__label" for="control-number">number</label>
+						<input class="form__input" id="control-number" type="text" placeholder="Your phone number:">
+					</div>
+				</div>
+				<!--checkbox wrapper-->
+				<label class="form__checkbox-wrapper">
+					<input type="checkbox" checked>
+					<!--checkbox-->
+					<span class="form__checkbox"></span>
+					<span class="form__checkbox-text">I agree to the processing of personal data</span>
+				</label>
+				<button class="button form__submit control__form-submit" type="submit">SUBmIT</button>
+			</form>
 		</section>
 	</section>
 </main>
