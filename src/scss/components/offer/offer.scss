@@ -1,0 +1,74 @@
+.offer {
+  @include change-computing();
+  @include size();
+  overflow: visible;
+  margin-bottom: 79px;
+
+  /*wrapper-img*/
+  &__wrapper-img {
+    @include change-computing();
+    @include maxSize(100%, 365px);
+    @include size();
+    overflow: visible;
+    margin: 0;
+  }
+
+  /*img*/
+  &__img {
+    @include change-computing();
+    @include size(100%, 365px);
+    display: block;
+  }
+
+  /*info*/
+  &__info {
+    @include change-computing();
+    @include maxSize(270px);
+    position: relative;
+    overflow: visible;
+    margin-top: -142px;
+    padding: 21px 10px 0 31px;
+    background-color: $base-color;
+    box-shadow: 5px 10px 20px $offer-background;
+  }
+
+  /*title*/
+  &__title {
+    @include yesevaOne();
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 21px;
+    color: $accent-color;
+  }
+
+  /*list*/
+  &__list {
+    @include list();
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+
+  /*item*/
+  &__item {
+    @include futuraBook();
+    font-size: 13px;
+    line-height: 22px;
+    color: $list-color;
+  }
+
+  /*button*/
+  &__button {
+    @include change-computing();
+    @include maxSize(190px, 40px);
+    @include size(190px, 40px);
+    position: relative;
+    left: -31px;
+    bottom: -20px;
+    display: block;
+    padding: 11px 5px;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 5px 5px 10px $brand-30-color;
+  }
+}

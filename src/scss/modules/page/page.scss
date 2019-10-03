@@ -13,12 +13,22 @@
     text-transform: uppercase;
   }
 
-  /*title icon*/
+  /*title*/
+  &__title {
+    @include yesevaOne();
+    margin: 0;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
   &__title-icon-wrapper {
     @include flex-content();
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: 18px auto 0;
 
     &::before {
       content: "";

@@ -2,10 +2,10 @@
   @include change-computing();
   @include futuraDemic();
   @include no-a();
-  @include transition(color);
   color: $base-color;
   background-color: $brand-color;
   outline: none;
+  transition: color $regular-time, box-shadow $regular-time;
 
   &:hover {
     cursor: pointer;
@@ -14,6 +14,7 @@
 
   &:active {
     color: $base-color;
+    box-shadow: none;
   }
 
   &_circle {

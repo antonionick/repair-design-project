@@ -55,3 +55,12 @@
 @mixin basePadding() {
   padding: $base-padding;
 }
+
+/*list*/
+@mixin list() {
+  @include flex-content();
+  flex-flow: column;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+}

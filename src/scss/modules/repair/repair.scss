@@ -1,0 +1,22 @@
+.repair {
+  margin-top: -25px;
+  padding: 83px 0 0;
+  background-color: $base-color;
+
+  /*wrapper*/
+  &__wrapper {
+    @include change-computing();
+    @include size();
+    padding: $base-padding;
+  }
+
+  /*title*/
+  &__title {
+    color: $title-color;
+  }
+
+  /*wrapper-offers*/
+  &__wrapper-offers {
+    margin-top: 40px;
+  }
+}
