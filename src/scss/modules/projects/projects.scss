@@ -44,6 +44,10 @@
   &__description {
     margin-top: 36px;
     order: 4;
+
+    &_margin_zero {
+      margin-top: 0;
+    }
   }
 
   &__description-item {

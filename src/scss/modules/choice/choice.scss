@@ -1,0 +1,53 @@
+.choice {
+  margin-top: 55px;
+
+  /*wrapper*/
+  &__wrapper {
+    @include flex-content();
+    flex-flow: column;
+    align-items: center;
+    padding: $base-padding;
+  }
+
+  /*info*/
+  &__info {
+    flex: 0 1 100%;
+  }
+
+  /*title*/
+  &__title {
+    @include yesevaOne();
+    margin: 0;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $brand-color;
+  }
+
+  /*list*/
+  &__list {
+    display: none;
+  }
+
+  &__item {
+  }
+
+  /*carousel*/
+  &__carousel {
+    @include maxSize(100%, 242px);
+    margin-top: 24px;
+  }
+
+  &__carousel-wrapper {
+  }
+
+  &__img {
+    @include size(100%, 242px);
+  }
+
+  &__carousel-butoon {
+
+  }
+}

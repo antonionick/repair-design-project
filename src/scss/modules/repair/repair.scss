@@ -19,4 +19,66 @@
   &__wrapper-offers {
     margin-top: 40px;
   }
+
+  /*offer*/
+  &__offer {
+    margin-bottom: 79px;
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+
+  /*wrapper-info*/
+  &__wrapper-info {
+    display: none;
+  }
+
+  /*info*/
+  &__info {
+
+  }
+
+  /*help*/
+  &__help {
+
+  }
+
+  /*content*/
+  &__content {
+
+  }
+
+  &__content__text {
+
+  }
+
+  /*form*/
+  &__form {
+
+  }
+
+  &__form-content-wrapper {
+
+  }
+
+  /*save*/
+  &__save {
+
+  }
+
+  &__save-wrapper-img {
+
+  }
+
+  &__save-img {
+
+    &_main {}
+
+    &_dollar {}
+
+    &_eye {}
+  }
+
+  &__text {}
 }
