@@ -40,14 +40,9 @@
 
   /*title*/
   &__title {
-    @include yesevaOne();
     margin: 20px 0;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 23px;
-    line-height: 30px;
+    text-align: left;
     color: $base-color;
-    text-transform: uppercase;
 
     &_brand {
       color: $brand-color;

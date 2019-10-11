@@ -17,15 +17,25 @@
 
   /*wrapper-offers*/
   &__wrapper-offers {
+    @include flex-content();
+    flex-flow: column;
     margin-top: 40px;
   }
 
-  /*offer*/
+  /*design*/
   &__offer {
-    margin-bottom: 79px;
+    margin-bottom: 59px;
 
     &:last-child {
       margin-bottom: 20px;
+    }
+  }
+
+  /*design img*/
+  &__offer-img {
+    &_big {
+      width: auto;
+      margin-left: -207px;
     }
   }
 

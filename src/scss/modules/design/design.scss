@@ -1,0 +1,73 @@
+.design {
+  margin-top: -124px;
+  padding-top: 176px;
+  background-color: $base-background;
+
+  /*wrapper*/
+  &__wrapper {
+    padding: $base-padding;
+  }
+
+  /*title*/
+  &__title {
+    color: $base-color;
+  }
+
+  &__title-icon-wrapper {
+    margin-top: 16px;
+  }
+
+  /*text*/
+  &__text {
+    @include futuraBook();
+    margin: 23px 0 0;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: $base-color;
+  }
+
+  &__text-br {
+    display: block;
+  }
+
+  /*wrapper offers*/
+  &__wrapper-offers {
+    @include flex-content();
+    flex-flow: column;
+    margin-top: 39px;
+  }
+
+  /*offer*/
+  &__offer {
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  /*offer-img*/
+  &__offer-img {
+    &_big {
+      width: auto;
+      margin-left: -350px;
+    }
+  }
+
+  /*offer-list*/
+  &__offer-list {
+    max-height: 154px;
+
+    @media only screen and (min-width: 500px) {
+      max-height: none;
+    }
+  }
+
+  /*offer-item-more ...*/
+  &__offer-item-more {
+    @media only screen and (min-width: 500px) {
+      display: none;
+    }
+  }
+}

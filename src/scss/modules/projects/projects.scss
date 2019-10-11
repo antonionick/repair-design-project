@@ -13,17 +13,10 @@
 
   /*title*/
   &__title {
-    @include yesevaOne();
     @include size();
     order: 1;
     margin: 36px 0 0;
-    font-size: 22px;
-    font-weight: normal;
-    line-height: 30px;
-    text-align: center;
     letter-spacing: -.07em;
-    text-transform: uppercase;
-    color: $brand-color;
   }
 
   /*text*/
