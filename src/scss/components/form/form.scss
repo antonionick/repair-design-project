@@ -5,7 +5,16 @@
   flex-flow: column;
 
   /*title*/
-  &__title {}
+  &__title {
+    @include yesevaOne();
+    @include size();
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: $base-color;
+  }
 
   /*content*/
   &__content-wrapper {

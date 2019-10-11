@@ -35,7 +35,7 @@
   &__wrapper-offers {
     @include flex-content();
     flex-flow: column;
-    margin-top: 39px;
+    margin: 39px 0 10px;
   }
 
   /*offer*/

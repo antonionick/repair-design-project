@@ -1,0 +1,109 @@
+.about-us {
+  @include change-computing();
+  @include size();
+  padding: 76px 0 38px;
+  background-color: $base-background;
+
+  /*wrapper*/
+  &__wrapper {
+    @include flex-content();
+    @include change-computing();
+    @include size();
+    flex-flow: column;
+    padding: $base-padding;
+  }
+
+  /*form*/
+  &__form {
+    @include change-computing();
+    @include size();
+    order: 1;
+  }
+
+  &__form-title {
+    margin: 0 0 52px;
+    line-height: 28px;
+    text-transform: uppercase;
+  }
+
+  &__form-content {
+    margin-top: 63px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  &__form-submit {
+    margin-top: 67px;
+    transition: color $regular-time, box-shadow $regular-time;
+  }
+
+  /*info*/
+  &__info {
+    @include change-computing();
+    @include size();
+    order: 3;
+    margin-top: 41px;
+  }
+
+  /*text*/
+  &__text {
+    @include size();
+    @include yesevaOne();
+    margin: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $brand-color;
+  }
+
+  /*br*/
+  &__br {
+    display: block;
+  }
+
+  /*contacts*/
+  &__contacts {
+    @include flex-content();
+    @include change-computing();
+    @include maxSize(108px);
+    @include size();
+    justify-content: space-between;
+    margin: 19px auto 0;
+    padding: 4px 4px 4px;
+  }
+
+  &__link {
+    @include change-computing();
+    @include size(39px);
+    padding: 8px 0 0 1px;
+    font-size: 21px;
+    text-align: center;
+    color: $base-color;
+    background-color: $brand-color;
+    box-shadow: 0 0 2px 2px $brand-50-color;
+
+    &:hover {
+      box-shadow: 0 0 4px 2px $brand-50-color;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+
+  /*map*/
+  &__map {
+    @include change-computing();
+    @include maxSize(100%, 255px);
+    @include size(100%, 255px);
+    order: 2;
+    margin-top: 46px;
+    background: no-repeat url("assets/img/map.png");
+    background-size: cover;
+  }
+}
