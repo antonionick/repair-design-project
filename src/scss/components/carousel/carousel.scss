@@ -15,6 +15,7 @@
   &__img {
     @include maxSize(100%, 100%);
     @include size(100%);
+    flex-shrink: 0;
   }
 
   /*button*/

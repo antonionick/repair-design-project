@@ -21,6 +21,7 @@
   }
 
   &__form-title {
+    @include size(100%, auto);
     margin: 0 0 52px;
     line-height: 28px;
     text-transform: uppercase;
@@ -49,7 +50,7 @@
 
   /*text*/
   &__text {
-    @include size();
+    @include size(100%, auto);
     @include yesevaOne();
     margin: 0;
     font-style: normal;
@@ -58,6 +59,10 @@
     line-height: 25px;
     text-align: center;
     text-transform: uppercase;
+    color: $brand-color;
+  }
+
+  &__phone-number {
     color: $brand-color;
   }
 
@@ -97,13 +102,17 @@
   }
 
   /*map*/
+  &__map-wrapper {
+    @include change-computing();
+    @include maxSize(100%, 255px);
+    @include size(100%);
+    order: 2;
+    margin-top: 46px;
+  }
+
   &__map {
     @include change-computing();
     @include maxSize(100%, 255px);
-    @include size(100%, 255px);
-    order: 2;
-    margin-top: 46px;
-    background: no-repeat url("assets/img/map.png");
-    background-size: cover;
+    @include size(100%);
   }
 }
