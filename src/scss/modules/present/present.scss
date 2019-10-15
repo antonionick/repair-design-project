@@ -1,9 +1,19 @@
 .present {
   background: $accent-color;
 
+  @media only screen and (min-width: $max-width) {
+    background-color: $dark-background;
+  }
+
   /*wrapper*/
   &__wrapper {
     @include flex-content();
+    position: relative;
+
+    @media only screen and (min-width: $max-width) {
+      max-width: none;
+      overflow: visible;
+    }
   }
 
   /*info*/
@@ -19,6 +29,14 @@
     order: 2;
     background: no-repeat url("assets/img/present-mobile.png");
     background-size: cover;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(1358px);
+      @include minSize(0, 707px);
+      margin: 0 auto;
+      padding-left: 60px;
+      background: no-repeat url("assets/img/present-desctop.png");
+    }
 
     &::after {
       @include size();
@@ -40,9 +58,17 @@
 
   /*title*/
   &__title {
+    @include change-computing();
     margin: 20px 0;
     text-align: left;
     color: $base-color;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(671px, 105px);
+      margin: -15px 0 19px;
+      font-size: 40px;
+      line-height: 53px;
+    }
 
     &_brand {
       color: $brand-color;
@@ -51,12 +77,29 @@
 
   /*text*/
   &__text {
-    @include futuraBook();
+    @include change-computing();
     @include maxSize(300px, 100px);
+    @include futuraBook();
     margin: 0 0 25px 0;
     font-size: 18px;
     line-height: 24px;
     color: $base-color;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(504px, 90px);
+      margin-bottom: 41px;
+      font-size: 22px;
+      line-height: 30px;
+    }
+  }
+
+  /*br*/
+  &__text-br {
+    display: none;
+
+    @media only screen and (min-width: $max-width) {
+      display: block;
+    }
   }
 
   /*buttons*/
@@ -67,6 +110,11 @@
     flex-flow: column;
     justify-content: space-between;
     align-items: stretch;
+
+    @media only screen and (min-width: $max-width) {
+      @include size(434px, 51px);
+      flex-flow: row;
+    }
   }
 
   &__button {
@@ -75,6 +123,10 @@
     justify-content: center;
     align-items: center;
     font-size: 13px;
+
+    @media only screen and (min-width: $max-width) {
+      @include size(207px, 51px);
+    }
 
     &_transparent {
       transition: border $regular-time, color $regular-time;
@@ -95,24 +147,122 @@
 
   /*soc-network*/
   &__soc-network {
+    @include change-computing();
+    @include maxSize(150px); // 150
+    @include size(100%, auto);
+    position: relative;
+    left: 0;
+    z-index: 2;
     display: none;
     order: 1;
+    align-self: stretch;
+    margin-left: -68px;
+    background-color: $dark-background;
+    transition: left $regular-time;
+
+    &:hover {
+      left: 68px;
+
+      .present__soc-network-link {
+        align-items: center;
+
+        &::after {
+          content: none;
+        }
+      }
+
+      .present__soc-network-text {
+        border-bottom: 1px solid $brand-color;
+        transform: rotate(0);
+        transition: border-bottom $regular-time, transform $regular-time;
+      }
+    }
+
+    @media only screen and (min-width: $max-width) {
+      display: block;
+    }
+  }
+
+  &__soc-network-link {
+    @include flex-content();
+    @include size();
+    @include futuraDemic();
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    color: $brand-color;
+
+    &::after {
+      @include size(1px, 51px);
+      content: '';
+      display: block;
+      margin: 45px 38px 0 0;
+      background-color: $brand-color;
+    }
   }
 
   &__soc-network-text {
-
+    display: block;
+    border-bottom: 1px solid transparent;
+    transform: rotate(90deg);
+    transition: transform $regular-time;
   }
 
   /*scroll*/
   &__scroll {
+    @include change-computing();
+    @include minSize(247px, 97px);
+    position: absolute;
+    left: 0;
+    bottom: -48.5px;
+    z-index: 4;
     display: none;
+    text-decoration: none;
+    background-color: $dark-background;
+
+    @media only screen and (min-width: $max-width) {
+      @include flex-content();
+      justify-content: center;
+      align-items: center;
+    }
+
+    &:hover {
+      .present__scroll-text {
+        color: $brand-color;
+      }
+    }
+
+    &:active {
+      .present__scroll-text {
+        color: $base-color;
+      }
+    }
+
   }
 
   &__scroll-text {
-
+    @include yesevaOne();
+    @include transition(color);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: $base-color;
+    border: 1px solid transparent;
   }
 
   &__scroll-item {
-
+    @include change-computing();
+    @include size(29px);
+    margin-left: 12px;
+    padding: 6px 1px 0 0;
+    text-align: center;
+    color: $brand-color;
+    border: 1.5px solid $brand-color;
+    border-radius: 50%;
   }
 }

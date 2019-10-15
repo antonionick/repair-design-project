@@ -5,7 +5,7 @@
 
   @media only screen and (min-width: $max-width) {
     @include maxSize($max-width);
-}
+  }
 
   /*br*/
   &__br {
