@@ -62,6 +62,10 @@
     @include change-computing();
     align-items: center;
     margin-top: 21px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   input[type=checkbox] {

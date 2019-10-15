@@ -3,6 +3,12 @@
   padding: 83px 0 0;
   background-color: $base-color;
 
+  @media only screen and (min-width: $max-width) {
+    margin-top: 0;
+    /*margin-top: -741px;
+    padding-top: 777px;*/
+  }
+
   /*wrapper*/
   &__wrapper {
     @include change-computing();

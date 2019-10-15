@@ -35,6 +35,10 @@
     align-items: center;
     margin: 18px auto 0;
 
+    @media only screen and (min-width: $max-width) {
+      margin-top: 13px;
+    }
+
     &::before {
       content: "";
       display: block;
@@ -48,7 +52,6 @@
       @include size(32px, 1px);
       background-color: $brand-color;
     }
-
   }
 
   &__title-icon {

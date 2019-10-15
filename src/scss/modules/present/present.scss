@@ -7,6 +7,7 @@
 
   /*wrapper*/
   &__wrapper {
+    @include change-computing();
     @include flex-content();
     position: relative;
 
@@ -31,10 +32,11 @@
     background-size: cover;
 
     @media only screen and (min-width: $max-width) {
-      @include maxSize(1358px);
+      @include maxSize(1356px);
       @include minSize(0, 707px);
+      flex: 1 1 70%;
       margin: 0 auto;
-      padding-left: 60px;
+      padding: 0 0 0 60px;
       background: no-repeat url("assets/img/present-desctop.png");
     }
 
@@ -148,7 +150,7 @@
   /*soc-network*/
   &__soc-network {
     @include change-computing();
-    @include maxSize(150px); // 150
+    @include maxSize(150px);
     @include size(100%, auto);
     position: relative;
     left: 0;
@@ -158,10 +160,11 @@
     align-self: stretch;
     margin-left: -68px;
     background-color: $dark-background;
-    transition: left $regular-time;
+    transition: left $regular-time, box-shadow $regular-time;
 
     &:hover {
       left: 68px;
+      box-shadow: 1px 0 2px $brand-20-color;
 
       .present__soc-network-link {
         align-items: center;
@@ -215,6 +218,7 @@
   &__scroll {
     @include change-computing();
     @include minSize(247px, 97px);
+    @include transition(box-shadow);
     position: absolute;
     left: 0;
     bottom: -48.5px;
@@ -230,12 +234,16 @@
     }
 
     &:hover {
+      box-shadow: 1px 0 2px $brand-20-color;
+
       .present__scroll-text {
         color: $brand-color;
       }
     }
 
     &:active {
+      box-shadow: none;
+
       .present__scroll-text {
         color: $base-color;
       }

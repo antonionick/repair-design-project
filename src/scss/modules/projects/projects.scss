@@ -3,7 +3,7 @@
   background-color: $base-background;
 
   @media only screen and (min-width: $max-width) {
-    padding-top: 107px;
+    padding: 107px 0 91px;
     background-color: $dark-background;
   }
 
@@ -16,9 +16,10 @@
     align-items: center;
 
     @media only screen and (min-width: $max-width) {
-      @include maxSize(100%, 560px);
+      @include maxSize($max-width, 580px);
       flex-flow: column wrap;
       align-items: flex-start;
+      align-content: space-between;
       padding: 0 0 0 101px;
     }
   }
@@ -65,7 +66,7 @@
     @media only screen and (min-width: $max-width) {
       @include maxSize(441px, 86px);
       @include size(34%, auto);
-      margin-right: 70px;
+      //margin-right: 70px;
       font-size: 18px;
       line-height: 29px;
       text-align: left;

@@ -1,14 +1,38 @@
 .control {
+  position: relative;
   background-color: $base-background;
+
+  @media only screen and (min-width: $max-width) {
+    background-color: $dark-background;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 323px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: white;
+    }
+  }
 
   /*wrapper*/
   &__wrapper {
     padding: $base-padding;
+
+    @media only screen and (min-width: $max-width) {
+      padding: 0;
+    }
   }
 
   /*title*/
   &__title {
     color: $base-color;
+
+    @media only screen and (min-width: $max-width) {
+      font-size: 20px;
+      line-height: 28px;
+    }
   }
 
   /*video*/
@@ -17,8 +41,15 @@
     @include maxSize(100%, 207px);
     @include size(100%, 0);
     position: relative;
+    z-index: 1;
     margin-top: 40px;
     padding-bottom: 56.25%;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(817px, 434px);
+      margin: 31px auto 0;
+      padding-bottom: 31.3%;
+    }
   }
 
   &__video {
@@ -32,9 +63,15 @@
   /*line*/
   &__line {
     @include size(55px, 1px);
+    position: relative;
+    z-index: 1;
     display: block;
     margin: 28px auto 0;
     background-color: $brand-color;
+
+    @media only screen and (min-width: $max-width) {
+      margin-top: 62px;
+    }
   }
 
   /*text*/
@@ -43,23 +80,96 @@
     @include maxSize(100%, 144px);
     @include size();
     @include futuraBook();
+    position: relative;
+    z-index: 1;
     margin: 21px 0 0;
     font-size: 14px;
     line-height: 24px;
     text-align: center;
     color: $base-color;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(681px, 130px);
+      margin: 34px auto 0;
+      font-size: 20px;
+      line-height: 34px;
+      color: $accent-color;
+    }
+  }
+
+  &__text-br {
+    display: none;
+
+    @media only screen and (min-width: $max-width) {
+      display: block;
+    }
   }
 
   /*form*/
   &__form {
+    position: relative;
+    z-index: 1;
     margin-top: 37px;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(769px, none);
+      flex-flow: row wrap;
+      justify-content: space-between;
+      margin: 91px auto 0;
+    }
   }
 
   &__form-content-wrapper {
     @include size(100%, 152px);
+
+    @media only screen and (min-width: $max-width) {
+      @include size(68%, auto);
+      order: 1;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__form-content {
+    @media only screen and (min-width: $max-width) {
+      flex: 0 1 45%;
+    }
+  }
+
+  &__form-label {
+    color: rgba(54, 54, 54, 0.5);
+  }
+
+  &__form-input {
+    color: $accent-color;
+    border-bottom: 1px solid rgba(54, 54, 54, 0.3);
+
+    &::placeholder {
+      color: $accent-color;
+    }
+  }
+
+  &__form-checkbox-wrapper {
+    @media only screen and (min-width: $max-width) {
+      order: 3;
+      margin: 35px auto 0;
+    }
+  }
+
+  &__form-checkbox-text {
+    @media only screen and (min-width: $max-width) {
+
+      color: $title-color;
+    }
   }
 
   &__form-submit {
     transition: color $regular-time, box-shadow $regular-time;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(26%);
+      order: 2;
+      margin-top: 0;
+    }
   }
 }
