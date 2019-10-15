@@ -2,6 +2,11 @@
   padding-bottom: 57px;
   background-color: $base-background;
 
+  @media only screen and (min-width: $max-width) {
+    padding-top: 107px;
+    background-color: $dark-background;
+  }
+
   /*wrapper*/
   &__wrapper {
     @include flex-content();
@@ -9,14 +14,39 @@
     @include change-computing();
     flex-flow: column;
     align-items: center;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(100%, 560px);
+      flex-flow: column wrap;
+      align-items: flex-start;
+      padding: 0 0 0 101px;
+    }
   }
 
   /*title*/
   &__title {
+    @include change-computing();
     @include size();
     order: 1;
     margin: 36px 0 0;
     letter-spacing: -.07em;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(253px, 66px);
+      @include size(30%, auto);
+      margin-top: 69px;
+      font-size: 27px;
+      line-height: 37px;
+      text-align: left;
+
+      &::after {
+        @include size(92px, 1px);
+        content: "";
+        display: inline-block;
+        margin: 0 0 7px 37px;
+        background-color: $brand-color;
+      }
+    }
   }
 
   /*text*/
@@ -31,12 +61,33 @@
     line-height: 22px;
     text-align: center;
     color: $base-color;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(441px, 86px);
+      @include size(34%, auto);
+      margin-right: 70px;
+      font-size: 18px;
+      line-height: 29px;
+      text-align: left;
+    }
   }
 
   /*description*/
   &__description {
-    margin-top: 36px;
+    @include change-computing();
     order: 4;
+    margin-top: 36px;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(441px, 86px);
+      @include size(38%, auto);
+      order: 3;
+      margin: 42px 0 34px;
+
+      &_margin_zero {
+        margin: 0;
+      }
+    }
 
     &_margin_zero {
       margin-top: 0;
@@ -45,15 +96,20 @@
 
   &__description-item {
     flex: 0 1 46%;
+    margin-bottom: 27px;
     padding-right: 10px;
+
+    @media only screen and (min-width: $max-width) {
+      flex: 0 1 40%;
+      margin-bottom: 0;
+    }
 
     &:nth-child(2n) {
       flex: 0 1 54%;
-    }
 
-    &:first-child,
-    &:nth-child(2) {
-      margin-bottom: 27px;
+      @media only screen and (min-width: $max-width) {
+        flex: 0 1 60%;
+      }
     }
   }
 
@@ -62,6 +118,12 @@
     font-size: 14px;
     line-height: 19px;
     color: $brand-color;
+
+    @media only screen and (min-width: $max-width) {
+      margin-bottom: 9px;
+      font-size: 18px;
+      line-height: 25px;
+    }
   }
 
   &__description-text {
@@ -69,37 +131,121 @@
     font-size: 14px;
     line-height: 19px;
     color: $base-color;
+
+    @media only screen and (min-width: $max-width) {
+      font-size: 15px;
+      line-height: 20px;
+    }
   }
 
   /*list*/
   &__list {
+    @include change-computing();
+    @include list();
+    @include maxSize(190px);
+    @include size(100%, auto);
     display: none;
+    order: 4;
+    margin-top: 79px;
+    list-style: none;
+
+    @media only screen and (min-width: $max-width) {
+      @include size(20%, auto);
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &__list-item {
+    transition: color $regular-time, background-color $regular-time;
+
+    &:hover {
+      cursor: pointer;
+      color: $brand-color;
+    }
+
+    &:active {
+      color: $base-color;
+    }
 
     &_button {
+      font-size: 30px;
+      color: $base-color;
 
       &_previous {
-
+        transform: rotate(180deg);
       }
     }
 
     &_variant {
+      $background: rgba(255, 255, 255, 0.3);
+      @include size(10px);
+      background: $background;
+      border-radius: 50%;
+
+      &:hover {
+        background-color: $base-color;
+      }
+
+      &:active {
+        background: $background;
+      }
 
       &_current {
-
+        background-color: $base-color;
       }
     }
   }
 
   /*variants*/
   &__variants {
+    @include change-computing();
+    @include list();
+    @include size(100%, auto);
     display: none;
+    order: 5;
+    list-style: none;
+
+    @media only screen and (min-width: $max-width) {
+      @include flex-content();
+      @include maxSize(623px);
+      @include size(60%, auto);
+      flex-flow: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &__variants-item {
+    @include change-computing();
+    @include yesevaOne();
+    padding-bottom: 6px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: $base-color;
+    border-bottom: 1px solid transparent;
+    transition: color $regular-time, border $regular-time;
 
+    &:hover {
+      cursor: pointer;
+      color: $brand-color;
+      border-bottom: 1px solid $brand-color;
+    }
+
+    &:active {
+      color: $base-color;
+      border-bottom: 1px solid transparent;
+    }
+
+    &_current {
+      color: $brand-color;
+      border-bottom: 1px solid $brand-color;
+    }
   }
 
   /*carousel*/
@@ -107,10 +253,29 @@
     @include maxSize(100%, 241px);
     order: 3;
     margin-top: 36px;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(811px, 482px);
+      @include size(65%, auto);
+      order: 6;
+      margin-top: 45px;
+    }
   }
 
   &__carousel-wrapper {
     margin-left: calc(-100% - 21px);
+
+    @media only screen and (min-width: $max-width) {
+     margin-left: 0;
+    }
+  }
+
+  &__carousel-button {
+    @media only screen and (min-width: $max-width) {
+      &:first-of-type {
+        display: none;
+      }
+    }
   }
 
   /*img, carousel img*/
@@ -118,6 +283,11 @@
     @include size(100%, 241px);
     flex: 0 0 100%;
     margin-right: 21px;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(679px, 482px);
+      @include size(679px, 482px);
+    }
 
     &:last-child {
       margin-right: 0;
