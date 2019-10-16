@@ -47,6 +47,10 @@
   font-family: FuturaBookC, Josefin, sans-serif;
 }
 
+@mixin futuraMedium() {
+  font-family: FuturaMediumC, sans-serif;
+}
+
 @mixin yesevaOne () {
   font-family: Yeseva One, cursive;
 }

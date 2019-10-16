@@ -29,6 +29,12 @@
     padding: 21px 10px 0 31px;
     background-color: $base-color;
     box-shadow: 5px 10px 20px $offer-background;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(330px);
+      margin: -110px auto 0;
+      padding: 25px 10px 0 31px;
+    }
   }
 
   /*title*/

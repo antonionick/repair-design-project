@@ -4,9 +4,8 @@
   background-color: $base-color;
 
   @media only screen and (min-width: $max-width) {
-    margin-top: 0;
-    /*margin-top: -741px;
-    padding-top: 777px;*/
+    margin-top: 147px;
+    padding: 0;
   }
 
   /*wrapper*/
@@ -14,6 +13,10 @@
     @include change-computing();
     @include size();
     padding: $base-padding;
+
+    @media only screen and (min-width: $max-width) {
+      padding: 0;
+    }
   }
 
   /*title*/
@@ -26,14 +29,31 @@
     @include flex-content();
     flex-flow: column;
     margin-top: 40px;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(1236px, none);
+      flex-flow: row;
+      justify-content: space-between;
+      margin: 31px auto 0;
+    }
   }
 
   /*design*/
   &__offer {
     margin-bottom: 59px;
 
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(392px, none);
+      flex: 0 1 33%;
+      margin: 0;
+    }
+
     &:last-child {
       margin-bottom: 20px;
+
+      @media only screen and (min-width: $max-width) {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -42,59 +62,232 @@
     &_big {
       width: auto;
       margin-left: -207px;
+
+      @media only screen and (min-width: $max-width) {
+        width: 300%;
+        margin-left: -395px;
+      }
     }
   }
 
   /*wrapper-info*/
   &__wrapper-info {
+    @include change-computing();
+    @include maxSize(1365px);
     display: none;
+    margin-top: 100px;
+
+    @media only screen and (min-width: $max-width) {
+      @include flex-content();
+      justify-content: space-between;
+    }
   }
 
   /*info*/
   &__info {
+    @include change-computing();
+    @include maxSize(810px);
+    @include minSize(0, 691px);
+    position: relative;
+    flex: 0 1 60%;
+    background: no-repeat url("assets/img/repair-back.png");
+
+    &::after {
+      @include change-computing();
+      @include size(636px);
+      content: "";
+      position: absolute;
+      top: 55px;
+      left: -155px;
+      display: block;
+      background-color: transparent;
+      border: 3px solid $brand-color;
+      border-radius: 50%;
+    }
+  }
+
+  /*content*/
+  &__content {
+    @include change-computing();
+    @include flex-content();
+    @include maxSize(450px);
+    position: relative;
+    top: 117px;
+    left: 356px;
+    z-index: 1;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 0;
+    background: white;
+
+    &:nth-child(2) {
+      top: 187px;
+      left: 442px;
+    }
+
+    &:nth-child(3) {
+      top: 305px;
+      left: 450px;
+
+      &::after {
+        @include change-computing();
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        background: no-repeat url("assets/img/repair-back.png") 178.4% 72.3%;
+      }
+    }
+
+    &:last-child {
+      top: 360px;
+      left: 390px;
+
+      &::after {
+        @include change-computing();
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        background: no-repeat url("assets/img/repair-back.png") 154.7% 92%;
+      }
+    }
+  }
+
+  &__content-number {
+    @include change-computing();
+    @include size(41px);
+    @include yesevaOne();
+    flex: 0 0 auto;
+    display: block;
+    padding: 8px 0 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: $base-color;
+    background-color: $brand-color;
+    border-radius: 50%;
+  }
+
+  &__content-text {
+    @include change-computing();
+    @include maxSize(394px);
+    @include size(100%, auto);
+    @include futuraDemic();
+    margin: 0;
+    font-size: 18px;
+    line-height: 21px;
+    color: $accent-color;
 
   }
 
   /*help*/
   &__help {
-
-  }
-
-  /*content*/
-  &__content {
-
-  }
-
-  &__content__text {
-
+    @include change-computing();
+    @include flex-content();
+    @include maxSize(506px);
+    @include size();
+    flex-flow: column;
   }
 
   /*form*/
   &__form {
-
+    @include maxSize(506px);
+    margin-top: 106px;
+    padding: 28px 49px;
+    background: $dark-background;
   }
 
-  &__form-content-wrapper {
+  &__form-title {
+    @include maxSize(297px, 50px);
+    @include futuraDemic();
+    margin: 0 auto 39px;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: $base-color;
+  }
 
+  &__form-title-br {
+    display: block;
+  }
+
+  &__form-content {
+    margin-top: 50px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__form-input {
+    @include futuraMedium();
+    padding-bottom: 7px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);;
+  }
+
+  &__form-checkbox-wrapper {
+    margin: 16px 0 39px;
+  }
+
+  &__form-submit {
+    @include maxSize(213px, 51px);
+    align-self: flex-end;
+    margin: 0;
+    font-size: 13px;
+    line-height: 18px;
+    box-shadow: 0 0 5px $brand-30-color;
+    transition: color $regular-time, box-shadow $regular-time;
+
+    &:hover {
+      box-shadow: 0 0 15px $brand-50-color;
+    }
+
+    &:active {
+      box-shadow: none;
+      color: $base-color;
+    }
   }
 
   /*save*/
   &__save {
-
+    @include change-computing();
+    @include flex-content();
+    @include maxSize(441px, 72px);
+    @include size(100%, 72px);
+    align-items: center;
+    margin: 39px 0 0 31px;
   }
 
   &__save-wrapper-img {
-
+    @include change-computing();
+    @include size(72px);
+    padding-top: 17px;
+    text-align: center;
+    background: $brand-color;
+    border-radius: 50%;
   }
 
-  &__save-img {
-
-    &_main {}
-
-    &_dollar {}
-
-    &_eye {}
+  &__save-text {
+    @include change-computing();
+    @include maxSize(334px, 47px);
+    @include futuraDemic();
+    margin: 0 0 0 25px;
+    font-size: 20px;
+    line-height: 25px;
+    color: $brand-color;
+    text-shadow: 0 3px 10px $brand-20-color;
   }
 
-  &__text {}
+  &__text-br {
+    display: block;
+  }
 }

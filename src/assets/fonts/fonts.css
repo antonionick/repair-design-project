@@ -11,6 +11,12 @@
 		url("FuturaBook/FuturaBookC.ttf");
 }
 
+@font-face {
+	font-family: "FuturaMediumC";
+	src: local("FuturaMediumC"),
+	url("FuturaMediumC/FuturaMediumC.ttf");
+}
+
 /*Yeseva One*/
 @font-face {
 	font-family: "Yeseva One";
