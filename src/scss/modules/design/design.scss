@@ -4,18 +4,39 @@
   background-color: $base-background;
 
   @media only screen and (min-width: $max-width) {
-    margin-top: 112px;
+    position: relative;
+    margin-top: 152px;
     padding: 0;
+    background: $base-color;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 470px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 0;
+      background: $dark-background;
+    }
   }
 
   /*wrapper*/
   &__wrapper {
     padding: $base-padding;
+
+    @media only screen and (min-width: $max-width) {
+      padding: 0;
+    }
   }
 
   /*title*/
   &__title {
     color: $base-color;
+
+    @media only screen and (min-width: $max-width) {
+      color: $title-color;
+    }
   }
 
   &__title-icon-wrapper {
@@ -30,25 +51,87 @@
     line-height: 20px;
     text-align: center;
     color: $base-color;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(763px, 57px);
+      margin: 24px auto 0;
+      font-size: 20px;
+      line-height: 27px;
+      color: $accent-color;
+    }
   }
 
   &__text-br {
     display: block;
+
+    @media only screen and (min-width: $max-width) {
+      display: none;
+
+      &_save {
+        display: block;
+      }
+    }
   }
 
   /*wrapper offers*/
   &__wrapper-offers {
     @include flex-content();
+    position: relative;
+    z-index: 1;
     flex-flow: column;
     margin: 39px 0 10px;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(1236px, none);
+      flex-flow: row;
+      justify-content: space-between;
+      margin: 39px auto 0;
+    }
   }
 
   /*offer*/
   &__offer {
     margin-bottom: 60px;
 
+    @media only screen and (min-width: $max-width) {
+      &:nth-child(2),
+      &:nth-child(3) {
+        & .design__offer-img {
+          display: none;
+        }
+      }
+
+      &:nth-child(2) {
+        & > .design__offer-wrapper-img {
+          background: no-repeat url("assets/img/offer-3.png");
+          background-size: cover;
+        }
+      }
+
+      &:nth-child(3) {
+        & > .design__offer-wrapper-img {
+          background: no-repeat url("assets/img/offer-2.png") 34%;
+          background-size: cover;
+        }
+      }
+    }
+
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  &__offer-wrapper-img {
+    @media only screen and (min-width: $max-width) {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.3);
+      }
     }
   }
 
@@ -57,6 +140,11 @@
     &_big {
       width: auto;
       margin-left: -350px;
+
+      @media only screen and (min-width: $max-width) {
+        width: auto;
+        margin-left: -350px;
+      }
     }
   }
 
@@ -75,4 +163,5 @@
       display: none;
     }
   }
+
 }

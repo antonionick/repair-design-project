@@ -4,12 +4,24 @@
   overflow: visible;
   padding-bottom: 20px;
 
+  @media only screen and (min-width: $max-width) {
+    @include maxSize(392px, none);
+    flex: 0 1 33%;
+    margin: 0;
+  }
+
   /*wrapper-img*/
   &__wrapper-img {
     @include change-computing();
     @include maxSize(100%, 365px);
     @include size();
+    position: relative;
     margin: 0;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(100%, 421px);
+      @include size(100%, 421px);
+    }
   }
 
   /*img*/
@@ -17,6 +29,10 @@
     @include change-computing();
     @include size(100%, 365px);
     display: block;
+
+    @media only screen and (min-width: $max-width) {
+      @include size(100%, 421px);
+    }
   }
 
   /*info*/
@@ -32,7 +48,7 @@
 
     @media only screen and (min-width: $max-width) {
       @include maxSize(330px);
-      margin: -110px auto 0;
+      margin: -127px auto 0;
       padding: 25px 10px 0 31px;
     }
   }
@@ -47,6 +63,11 @@
     line-height: 21px;
     text-transform: capitalize;
     color: $accent-color;
+
+    @media only screen and (min-width: $max-width) {
+      font-size: 18px;
+      line-height: 25px;
+    }
   }
 
   /*list*/
@@ -55,6 +76,10 @@
     @include list();
     margin-top: 10px;
     padding-left: 20px;
+
+    @media only screen and (min-width: $max-width) {
+     margin-top: 13px;
+    }
   }
 
   /*item*/
@@ -63,6 +88,11 @@
     font-size: 13px;
     line-height: 22px;
     color: $list-color;
+
+    @media only screen and (min-width: $max-width) {
+      font-size: 15px;
+      line-height: 25px;
+    }
   }
 
   /*button*/
@@ -78,5 +108,13 @@
     text-align: center;
     text-transform: uppercase;
     box-shadow: 5px 5px 10px $brand-30-color;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(228px, 54px);
+      @include size(228px, 54px);
+      padding: 15px 5px;
+      font-size: 18px;
+      line-height: 25px;
+    }
   }
 }
