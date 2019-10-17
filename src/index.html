@@ -134,8 +134,12 @@
 			<!--carousel-->
 			<div class="carousel projects__carousel">
 				<div class="carousel__wrapper projects__carousel-wrapper">
-					<img class="carousel__img projects__img" src="assets/img/projects-slider1.png" alt="picture">
-					<img class="carousel__img projects__img" src="assets/img/projects-slider2.png" alt="picture">
+					<div class="carousel__wrapper-img projects__wrapper-img">
+						<img class="carousel__img projects__img" src="assets/img/projects-slider1.png" alt="picture">
+					</div>
+					<div class="carousel__wrapper-img projects__wrapper-img">
+						<img class="carousel__img projects__img" src="assets/img/projects-slider2.png" alt="picture">
+					</div>
 				</div>
 				<img class="projects__carousel-button  carousel__button button button_circle" src="assets/img/left.svg"
 						 alt="left">
@@ -182,7 +186,7 @@
 					<!--input-->
 					<div class="form__content control__form-content">
 						<label class="form__label control__form-label" for="control-number">number</label>
-						<input class="form__input control__form-input" id="control-number" type="text"
+						<input class="form__input control__form-input" id="control-number" type="tel"
 									 placeholder="Your phone number:" required>
 					</div>
 				</div>
@@ -327,13 +331,13 @@
 							<!--input-->
 							<div class="form__content repair__form-content">
 								<label class="form__label" for="repair-number">number</label>
-								<input class="form__input repair__form-input" id="repair-number" type="text"
+								<input class="form__input repair__form-input" id="repair-number" type="tel"
 											 placeholder="Your phone number:" required>
 							</div>
 							<!--input-->
 							<div class="form__content repair__form-content">
 								<label class="form__label" for="repair-email">email</label>
-								<input class="form__input repair__form-input" id="repair-email" type="text"
+								<input class="form__input repair__form-input" id="repair-email" type="email"
 											 placeholder="Your email" required>
 							</div>
 						</div>
@@ -351,7 +355,8 @@
 						<div class="repair__save-wrapper-img">
 							<img class="repair__save-img" src="assets/img/repair-help.png" alt="save">
 						</div>
-						<p class="repair__save-text">Help save 10 - 20% of the <span class="repair__text-br"></span> cost of materials</p>
+						<p class="repair__save-text">Help save 10 - 20% of the <span class="repair__text-br"></span> cost of
+							materials</p>
 					</div>
 				</div>
 			</div>
@@ -365,7 +370,7 @@
 				<h2 class="page__title choice__title">We realize your <span class="page__br"></span> wildest fantasies</h2>
 				<!--list-->
 				<ul class="choice__list">
-					<li class="choice__item">American classic</li>
+					<li class="choice__item choice__item_current">American classic</li>
 					<li class="choice__item">Empire</li>
 					<li class="choice__item">Classical</li>
 					<li class="choice__item">Loft</li>
@@ -381,10 +386,18 @@
 			<!--carousel-->
 			<div class="carousel choice__carousel">
 				<div class="carousel__wrapper choice__carousel-wrapper">
-					<img class="carousel__img choice__img" src="assets/img/choice-1.png" alt="picture">
-					<img class="carousel__img choice__img" src="assets/img/choice-2.png" alt="picture">
-					<img class="carousel__img choice__img" src="assets/img/choice-3.png" alt="picture">
-					<img class="carousel__img choice__img" src="assets/img/choice-4.png" alt="picture">
+					<div class="carousel__wrapper-img choice__wrapper-img">
+						<img class="carousel__img choice__img" src="assets/img/choice-1.png" alt="picture">
+					</div>
+					<div class="carousel__wrapper-img choice__wrapper-img">
+						<img class="carousel__img choice__img" src="assets/img/choice-2.png" alt="picture">
+					</div>
+					<div class="carousel__wrapper-img choice__wrapper-img">
+						<img class="carousel__img choice__img" src="assets/img/choice-3.png" alt="picture">
+					</div>
+					<div class="carousel__wrapper-img choice__wrapper-img">
+						<img class="carousel__img choice__img" src="assets/img/choice-4.png" alt="picture">
+					</div>
 				</div>
 				<!--carousel left-->
 				<img class="carousel__button button button_circle choice__carousel-button" src="assets/img/left.svg"

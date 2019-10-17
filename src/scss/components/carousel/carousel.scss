@@ -12,10 +12,15 @@
   }
 
   /*img*/
-  &__img {
+  &__wrapper-img {
+    @include change-computing();
     @include maxSize(100%, 100%);
     @include size(100%);
     flex-shrink: 0;
+  }
+
+  &__img {
+    @include size(100%);
   }
 
   /*button*/
@@ -41,7 +46,7 @@
     }
 
     &_right {
-      left: calc(90% - 14px);
+      left: calc(100% - 50px);
       transform: rotate(180deg);
     }
   }

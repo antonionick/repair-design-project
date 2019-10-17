@@ -1,44 +1,181 @@
 .choice {
+  @include change-computing();
   margin-top: 55px;
+
+  @media only screen and (min-width: $max-width) {
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+    margin: 242px 0 40px;
+    background: no-repeat $dark-background url("assets/img/choice-1.png");
+    background-size: cover;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      background: linear-gradient(120.96deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.9) 100%);
+    }
+  }
 
   /*wrapper*/
   &__wrapper {
     @include flex-content();
+
     flex-flow: column;
     align-items: center;
     padding: $base-padding;
+
+    @media only screen and (min-width: $max-width) {
+      @include minSize(0, 864px);
+      flex-flow: row;
+      justify-content: space-between;
+      align-items: stretch;
+      overflow: visible;
+      padding: 0;
+    }
   }
 
   /*info*/
   &__info {
+    @include change-computing();
     flex: 0 1 100%;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(510px);
+      flex: 0 1 36%;
+      padding: 0 20px 0 99px;
+    }
   }
 
   /*title*/
-  &__title {}
+  &__title {
+    @media only screen and (min-width: $max-width) {
+      @include change-computing();
+      @include maxSize(411px, 66px);
+      margin-top: 137px;
+      text-align: left;
+    }
+  }
 
   /*list*/
   &__list {
+    @include change-computing();
+    @include list();
     display: none;
+    margin-top: 47px;
+    list-style: none;
+
+    @media only screen and (min-width: $max-width) {
+      @include flex-content();
+      flex-flow: column;
+    }
   }
 
   &__item {
+    @include proximaNova();
+    margin-top: 14px;
+    font-size: 20px;
+    line-height: 34px;
+    color: $base-color;
+    border-bottom: 1px solid transparent;
+    transition: color $regular-time, border-bottom $regular-time;
+
+    &:hover {
+      cursor: pointer;
+      color: $brand-color;
+      border-bottom: 1px solid $brand-color;
+    }
+
+    &:active {
+      color: $base-color;
+      border-bottom: 1px solid transparent;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &_current {
+      color: $brand-color;
+      border-bottom: 1px solid $brand-color;
+    }
   }
 
   /*carousel*/
   &__carousel {
     @include maxSize(100%, 242px);
     margin-top: 24px;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(865px, none);
+      @include size(62%, auto);
+      overflow: visible;
+      margin-top: 0;
+    }
   }
 
   &__carousel-wrapper {
+    position: relative;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(852px, 864px);
+      flex-flow: column wrap;
+    }
   }
 
-  &__img {
+  &__wrapper-img {
     @include size(100%, 242px);
+    position: relative;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(354px, 625px);
+      @include size(auto, auto);
+      margin-right: 43px;
+
+      /*first child*/
+      &:first-child {
+        @include size(auto, 556px);
+        top: -41px;
+
+        & > .choice__img {
+          margin-left: -246px;
+          width: 240%;
+        }
+      }
+
+      /*second child*/
+      &:nth-child(2) {
+        @include size(auto, 349px);
+        top: 553px;
+        left: -397px;
+      }
+
+      /*third child*/
+      &:nth-child(3) {
+        @include size(auto, 275px);
+        top: -462px;
+      }
+
+      /*last child*/
+      &:last-child {
+        @include size(auto, 625px);
+        top: 199px;
+        left: -395px;
+      }
+    }
   }
 
-  &__carousel-butoon {
 
+  &__img {}
+
+  &__carousel-button {
+    @media only screen and (min-width: $max-width) {
+      display: none;
+    }
   }
 }

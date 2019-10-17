@@ -19,12 +19,12 @@
     @media only screen and (min-width: $max-width) {
       &:hover {
         text-shadow: none;
+        border-bottom: 1px solid $brand-color;
       }
     }
 
     &:hover {
       text-shadow: -1px 4px 3px black;
-      border-bottom: 1px solid $brand-color;
     }
 
     &:active {

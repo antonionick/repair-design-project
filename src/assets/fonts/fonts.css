@@ -17,6 +17,15 @@
 	url("FuturaMediumC/FuturaMediumC.ttf");
 }
 
+/*Proxima Nova*/
+@font-face {
+	font-family: "ProximaNova";
+	src: local("ProximaNova"),
+	url("ProximaNova/ProximaNovaCond-Light.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
 /*Yeseva One*/
 @font-face {
 	font-family: "Yeseva One";

@@ -1,8 +1,8 @@
 .control {
-  position: relative;
   background-color: $base-background;
 
   @media only screen and (min-width: $max-width) {
+    position: relative;
     background-color: $dark-background;
 
     &::after {
@@ -137,15 +137,21 @@
   }
 
   &__form-label {
-    color: rgba(54, 54, 54, 0.5);
+    @media only screen and (min-width: $max-width) {
+      color: rgba(54, 54, 54, 0.5);
+    }
   }
 
   &__form-input {
-    color: $accent-color;
-    border-bottom: 1px solid rgba(54, 54, 54, 0.3);
+    padding-bottom: 8px;
 
-    &::placeholder {
+    @media only screen and (min-width: $max-width) {
       color: $accent-color;
+      border-bottom: 1px solid rgba(54, 54, 54, 0.3);
+
+      &::placeholder {
+        color: $accent-color;
+      }
     }
   }
 

@@ -55,6 +55,10 @@
   font-family: Yeseva One, cursive;
 }
 
+@mixin proximaNova () {
+  font-family: ProximaNova, sans-serif;
+}
+
 /*padding*/
 @mixin basePadding() {
   padding: $base-padding;

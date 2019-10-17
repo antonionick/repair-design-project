@@ -3,6 +3,11 @@
   padding-top: 176px;
   background-color: $base-background;
 
+  @media only screen and (min-width: $max-width) {
+    margin-top: 112px;
+    padding: 0;
+  }
+
   /*wrapper*/
   &__wrapper {
     padding: $base-padding;

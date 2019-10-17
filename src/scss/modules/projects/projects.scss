@@ -280,7 +280,7 @@
   }
 
   /*img, carousel img*/
-  &__img {
+  &__wrapper-img {
     @include size(100%, 241px);
     flex: 0 0 100%;
     margin-right: 21px;
@@ -293,5 +293,9 @@
     &:last-child {
       margin-right: 0;
     }
+  }
+
+  &__img {
+    @include size(100%, 100%);
   }
 }
