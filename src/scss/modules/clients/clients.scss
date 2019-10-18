@@ -1,3 +1,48 @@
 .clients {
+  @include change-computing();
   display: none;
+  margin-top: 88px;
+
+  @media only screen and (min-width: 1440px) {
+    display: block;
+  }
+
+  /*wrapper*/
+  &__wrapper {
+    @include change-computing();
+    @include maxSize(1236px);
+    overflow: visible;
+    margin: 0 auto;
+  }
+
+  /*title*/
+  &__title {
+    color: $accent-color;
+  }
+
+  /*text*/
+  &__text {
+    @include change-computing();
+    @include maxSize(476px, 57px);
+    @include futuraBook();
+    margin: 24px auto 0;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    color: $accent-color;
+  }
+
+  &__text-br {
+    display: block;
+  }
+
+  &__wrapper-comments {
+    @include flex-content();
+    @include change-computing();
+    justify-content: space-between;
+    align-items: stretch;
+    overflow: visible;
+    margin-top: 39px;
+    margin-bottom: 50px;
+  }
 }
