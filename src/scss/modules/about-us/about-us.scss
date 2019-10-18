@@ -104,17 +104,18 @@
   /*checkbox*/
   &__form-checkbox-wrapper {
     @media only screen and (min-width: 1440px) {
-      margin: 35px 118px 0;
+      margin: 33px 118px 0;
     }
   }
 
   &__form-submit {
     margin-top: 67px;
+    padding: 0;
     transition: color $regular-time, box-shadow $regular-time;
 
     @media only screen and (min-width: 1440px) {
       @include maxSize(200px, 51px);
-      margin: 45px auto 0;
+      margin: 40px auto 0;
     }
   }
 
