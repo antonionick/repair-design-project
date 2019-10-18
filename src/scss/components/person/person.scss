@@ -3,6 +3,10 @@
   @include maxSize(339px);
   @include size();
 
+  @media only screen and (min-width: 1440px) {
+    @include maxSize(307px);
+  }
+
   /*wrapper-icon*/
   &__wrapper-icon {
     position: relative;
@@ -22,11 +26,21 @@
     @include maxSize(303px, 352px);
     @include size(100%, 352px);
     margin: 0 0 0 35px;
+    background-color: $base-color;
+
+    @media only screen and (min-width: 1440px) {
+      @include maxSize(272px, 358px);
+      @include size(100%, 358px);
+    }
   }
 
   /*img*/
   &__img {
     @include size(303px, 352px);
+
+    @media only screen and (min-width: 1440px) {
+      @include size(auto, 358px);
+    }
   }
 
   /*info*/
@@ -39,6 +53,10 @@
     padding: 22px 0 0;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);;
     background-color: $base-color;
+
+    @media only screen and (min-width: 1440px) {
+      margin-left: 55px;
+    }
   }
 
   /*name*/

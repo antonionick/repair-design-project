@@ -1,9 +1,30 @@
 .team {
+  position: relative;
   padding-top: 66px;
   background-color: $base-background;
 
+  @media only screen and (min-width: 1440px) {
+    padding-top: 95px;
+    background-color: $dark-background;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 501px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: $base-color;
+    }
+  }
+
   /*wrapper*/
-  &__wrapper {  }
+  &__wrapper {
+    @media only screen and (min-width: 1440px) {
+      @include maxSize(1063px);
+      margin: 0 auto;
+    }
+  }
 
   /*title*/
   &__title {
@@ -17,29 +38,58 @@
 
   /*text*/
   &__text {
+    @include change-computing();
     @include futuraBook();
-    margin: 23px 0 0;
+    position: relative;
+    z-index: 1;
+    margin: 23px auto 0;
     padding: $base-padding;
     font-size: 15px;
     line-height: 20px;
     text-align: center;
     color: $base-color;
 
-    &_size_big {
-      display: none;
+    @media only screen and (min-width: 1440px) {
+      @include maxSize(476px);
       font-size: 20px;
-      margin-top: 17px;
-      line-height: 34px;
-      color: $accent-color;
+      line-height: 27px;
     }
+
+    &_second {
+      display: none;
+      margin-top: 17px;
+      padding: 0;
+      text-align: center;
+      color: $accent-color;
+
+      @media only screen and (min-width: 1440px) {
+        @include maxSize(558px, 136px);
+        display: block;
+        font-size: 20px;
+        line-height: 34px;
+
+      }
+    }
+  }
+
+  &__text-br {
+    display: block;
   }
 
   /*wrapper-persons*/
   &__wrapper-persons {
     @include flex-content();
     @include change-computing();
+    position: relative;
+    z-index: 1;
     flex-flow: column;
     margin-top: 41px;
+
+    @media only screen and (min-width: 1440px) {
+      margin-top: 38px;
+      flex-flow: row;
+      justify-content: space-between;
+    }
   }
 
   /*person*/
@@ -48,14 +98,30 @@
     margin: 37px auto 0;
     padding: 17px 18px 0;
 
+    @media only screen and (min-width: 1440px) {
+      margin: 0;
+      padding: 0;
+
+      & .person__img {
+        margin-left: -12px;
+      }
+    }
+
     &:first-child {
       margin-top: 0;
     }
   }
+
   &__line {
     @include size(55px, 1px);
+    position: relative;
+    z-index: 1;
     display: none;
-    margin: 53px auto 0;
+    margin: 55px auto 0;
     background-color: $brand-color;
+
+    @media only screen and (min-width: 1440px) {
+      display: block;
+    }
   }
 }
