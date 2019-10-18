@@ -1,8 +1,37 @@
 .about-us {
   @include change-computing();
   @include size();
+  position: relative;
+  z-index: 1;
   padding: 76px 0 38px;
   background-color: $base-background;
+
+  @media only screen and (min-width: 1440px) {
+    margin: 131px 0 0;
+    padding: 0;
+    background: no-repeat url("assets/img/back-about.png") 0 100%;
+    background-size: cover;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 233px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.85);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 233px;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: $base-color;
+    }
+  }
 
   /*wrapper*/
   &__wrapper {
@@ -11,13 +40,31 @@
     @include size();
     flex-flow: column;
     padding: $base-padding;
+
+    @media only screen and (min-width: 1440px) {
+      padding: 0;
+    }
   }
 
   /*form*/
   &__form {
     @include change-computing();
     @include size();
+    position: relative;
+    z-index: 1;
     order: 1;
+
+    @media only screen and (min-width: 1440px) {
+      @include maxSize(883px, 445px);
+      @include size(100%, 445px);
+      margin: 0 auto;
+      padding: 34px 181px;
+      background-color: $dark-background;
+
+      & > .form__content-wrapper {
+        justify-content: space-between;
+      }
+    }
   }
 
   &__form-title {
@@ -25,27 +72,67 @@
     margin: 0 0 52px;
     line-height: 28px;
     text-transform: uppercase;
+
+    @media only screen and (min-width: 1440px) {
+      margin-bottom: 45px;
+    }
   }
 
   &__form-content {
     margin-top: 63px;
+
+    @media only screen and (min-width: 1440px) {
+      @include maxSize(231px);
+      margin-top: 0;
+
+      &:last-of-type {
+        @include maxSize();
+        flex: 0 1 100%;
+        margin-top: 48px;
+      }
+
+      & .form__input {
+        border-bottom: 1px solid $base-30-color;
+      }
+    }
 
     &:first-of-type {
       margin-top: 0;
     }
   }
 
+  /*checkbox*/
+  &__form-checkbox-wrapper {
+    @media only screen and (min-width: 1440px) {
+      margin: 35px 118px 0;
+    }
+  }
+
   &__form-submit {
     margin-top: 67px;
     transition: color $regular-time, box-shadow $regular-time;
+
+    @media only screen and (min-width: 1440px) {
+      @include maxSize(200px, 51px);
+      margin: 45px auto 0;
+    }
   }
 
   /*info*/
   &__info {
     @include change-computing();
     @include size();
+    position: relative;
+    z-index: 1;
     order: 3;
     margin-top: 41px;
+
+    @media only screen and (min-width: 1440px) {
+      @include maxSize(589px);
+      align-self: center;
+      order: 3;
+      margin-top: 52px;
+    }
   }
 
   /*text*/
@@ -60,6 +147,11 @@
     text-align: center;
     text-transform: uppercase;
     color: $brand-color;
+
+    @media only screen and (min-width: 1440px) {
+      font-size: 20px;
+      line-height: 28px;
+    }
   }
 
   &__phone-number {
@@ -69,6 +161,10 @@
   /*br*/
   &__br {
     display: block;
+
+    @media only screen and (min-width: 1440px) {
+      display: none;
+    }
   }
 
   /*contacts*/
@@ -79,7 +175,12 @@
     @include size();
     justify-content: space-between;
     margin: 19px auto 0;
-    padding: 4px 4px 4px;
+    padding: 4px;
+
+    @media only screen and (min-width: 1440px) {
+      @include maxSize(78px);
+      margin-top: 26px;
+    }
   }
 
   &__link {
@@ -91,6 +192,12 @@
     color: $base-color;
     background-color: $brand-color;
     box-shadow: 0 0 2px 2px $brand-50-color;
+
+    @media only screen and (min-width: 1440px) {
+      @include size(28px);
+      padding: 6px 0 0 1px;
+      font-size: 16px;
+    }
 
     &:hover {
       box-shadow: 0 0 4px 2px $brand-50-color;
@@ -106,13 +213,26 @@
     @include change-computing();
     @include maxSize(100%, 255px);
     @include size(100%);
+    position: relative;
+    z-index: 1;
     order: 2;
     margin-top: 46px;
+
+    @media only screen and (min-width: 1440px) {
+      @include maxSize(925px, 465px);
+      order: 3;
+      align-self: center;
+      margin: 43px 0 66px;
+    }
   }
 
   &__map {
     @include change-computing();
-    @include maxSize(100%, 255px);
-    @include size(100%);
+    @include size(auto, 255px);
+
+    @media only screen and (min-width: 1440px) {
+      @include maxSize(925px, 465px);
+      @include size(100%, 465px);
+    }
   }
 }

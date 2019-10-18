@@ -138,8 +138,6 @@
   }
 
   &__form-input {
-    padding-bottom: 8px;
-
     @media only screen and (min-width: $max-width) {
       color: $accent-color;
       border-bottom: 1px solid rgba(54, 54, 54, 0.3);

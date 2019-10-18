@@ -1,5 +1,6 @@
 .clients {
   @include change-computing();
+  overflow: visible;
   display: none;
   margin-top: 88px;
 
@@ -43,6 +44,5 @@
     align-items: stretch;
     overflow: visible;
     margin-top: 39px;
-    margin-bottom: 50px;
   }
 }

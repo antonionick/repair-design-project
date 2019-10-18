@@ -124,15 +124,15 @@
 
     @media only screen and (min-width: $max-width) {
       @include maxSize(852px, 864px);
-      flex-flow: column wrap;
+      flex-flow: column;
     }
   }
 
   &__wrapper-img {
     @include size(100%, 242px);
-    position: relative;
 
     @media only screen and (min-width: $max-width) {
+      position: relative;
       @include maxSize(354px, 625px);
       @include size(auto, auto);
       margin-right: 43px;
@@ -151,21 +151,20 @@
       /*second child*/
       &:nth-child(2) {
         @include size(auto, 349px);
-        top: 553px;
-        left: -397px;
       }
 
       /*third child*/
       &:nth-child(3) {
         @include size(auto, 275px);
-        top: -462px;
+        top: -1017px;
+        left: 397px;
       }
 
       /*last child*/
       &:last-child {
         @include size(auto, 625px);
-        top: 199px;
-        left: -395px;
+        top: -981px;
+        left: 397px;
       }
     }
   }

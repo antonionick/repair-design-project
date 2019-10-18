@@ -42,6 +42,7 @@
     @include futuraBook();
     @include size();
     display: block;
+    padding-bottom: 8px;
     font-size: 18px;
     line-height: 25px;
     color: $base-color;
