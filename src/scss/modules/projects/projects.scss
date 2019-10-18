@@ -141,62 +141,14 @@
 
   /*list*/
   &__list {
-    @include change-computing();
-    @include list();
     @include maxSize(190px);
-    @include size(100%, auto);
     display: none;
     order: 4;
     margin-top: 79px;
-    list-style: none;
 
     @media only screen and (min-width: $max-width) {
       @include size(20%, auto);
       display: flex;
-      flex-flow: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
-
-  &__list-item {
-    transition: color $regular-time, background-color $regular-time;
-
-    &:hover {
-      cursor: pointer;
-      color: $brand-color;
-    }
-
-    &:active {
-      color: $base-color;
-    }
-
-    &_button {
-      font-size: 30px;
-      color: $base-color;
-
-      &_previous {
-        transform: rotate(180deg);
-      }
-    }
-
-    &_variant {
-      $background: rgba(255, 255, 255, 0.3);
-      @include size(10px);
-      background: $background;
-      border-radius: 50%;
-
-      &:hover {
-        background-color: $base-color;
-      }
-
-      &:active {
-        background: $background;
-      }
-
-      &_current {
-        background-color: $base-color;
-      }
     }
   }
 

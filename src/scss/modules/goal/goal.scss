@@ -1,3 +1,176 @@
 .goal {
+  position: relative;
   display: none;
+
+  @media only screen and (min-width: $max-width) {
+    display: block;
+    margin-top: -20px;
+    background: $dark-background;
+  }
+
+  /*wrapper*/
+  &__wrapper {
+    @include flex-content();
+    @include change-computing();
+    @include maxSize(1236px, 686px);
+    @include size(100%, 686px);
+    flex-flow: column wrap;
+    align-content: space-between;
+    margin: 0 auto;
+  }
+
+  /*about*/
+  &__about {
+    @include futuraDemic();
+    font-size: 15px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: $base-color;
+  }
+
+  /*title*/
+  &__title {
+    @include change-computing();
+    @include yesevaOne();
+    @include maxSize(304px, 66px);
+    @include size(25%, auto);
+    position: relative;
+    margin: 18px 0 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 37px;
+    text-transform: uppercase;
+    color: $brand-color;
+
+    &::after {
+      @include size(91px, 1px);
+      content: "";
+      position: absolute;
+      bottom: 13px;
+      right: 0;
+      background-color: $brand-color;
+    }
+
+  }
+
+  &__title-br {
+    display: block;
+  }
+
+  /*text wrapper*/
+  &__text-wrapper {
+    @include flex-content();
+    @include change-computing();
+    @include maxSize(337px, 375px);
+    @include minSize(0, 323px);
+    @include size(30%, auto);
+    flex-flow: column;
+    margin-top: 92px;
+  }
+
+  /*text-page*/
+  &__text-page {
+    @include yesevaOne();
+    order: 1;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+    color: $base-color;
+  }
+
+  /*text-title*/
+  &__text-title {
+    @include yesevaOne();
+    order: 2;
+    margin: 22px 0 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 23px;
+    text-transform: uppercase;
+    color: $brand-color;
+  }
+
+  &__text-title-br {
+    display: block;
+  }
+
+  /*text*/
+  &__text {
+    @include futuraBook();
+    order: 3;
+    margin: 16px 0 0;
+    font-size: 15px;
+    line-height: 25px;
+    color: #FFFFFF;
+  }
+
+  /*list*/
+  &__list {
+    @include maxSize(287px);
+    margin: 61px 0 0;
+  }
+
+  /*description*/
+  &__description {
+    @include maxSize(765px);
+    @include size(63%, auto);
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-top: 36px;
+
+    &_first {
+      margin-top: 87px;
+    }
+  }
+
+  &__description-item {
+    @include maxSize(120px);
+    opacity: .3;
+    flex: 0 1 17%;
+
+    &_current {
+      opacity: 1;
+    }
+  }
+
+  &__description-title {
+    @include yesevaOne();
+    align-self: flex-start;
+    margin: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: $base-color;
+    border-bottom: 1px solid $brand-color;
+  }
+
+  &__description-text {
+    @include maxSize(120px);
+    @include futuraBook();
+    margin: 11px 0 0;
+    font-size: 15px;
+    line-height: 18px;
+    color: $base-color;
+  }
+
+  &__description-text_br {
+    display: block;
+  }
+
+  /*img*/
+  &__wrapper-img {
+    @include change-computing();
+    @include maxSize(765px, 376px);
+    margin-top: 44px;
+  }
+
+  &__img {
+    @include size(100%, 376px);
+  }
 }

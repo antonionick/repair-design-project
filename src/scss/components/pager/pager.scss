@@ -1,0 +1,58 @@
+.pager {
+  @include flex-content();
+  @include change-computing();
+  @include list();
+  @include size(100%, auto);
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+
+  /*item*/
+  &__item {
+    @include size(10px);
+    @include transition(background-color);
+    $background: rgba(255, 255, 255, 0.3);
+    background: $background;
+    border-radius: 50%;
+
+    /*hover item*/
+    &:hover {
+      cursor: pointer;
+      background-color: $base-color;
+    }
+
+    /*active item*/
+    &:active {
+      background: $background;
+    }
+
+    /*current */
+    &_current {
+      background-color: $base-color;
+    }
+  }
+
+  /*button*/
+  &__item-button {
+    @include transition(color);
+    font-size: 30px;
+    color: $base-color;
+
+    /*hover button*/
+    &:hover {
+      cursor: pointer;
+      color: $brand-color;
+    }
+
+    /*active button*/
+    &:active {
+      color: $base-color;
+    }
+
+    /*previous*/
+    &_previous {
+      transform: rotate(180deg);
+    }
+  }
+}
