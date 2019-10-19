@@ -2,7 +2,7 @@
   padding-bottom: 57px;
   background-color: $base-background;
 
-  @media only screen and (min-width: $max-width) {
+  @media only screen and (min-width: $tablet-width) {
     padding: 107px 0 91px;
     background-color: $dark-background;
   }
@@ -15,11 +15,20 @@
     flex-flow: column;
     align-items: center;
 
-    @media only screen and (min-width: $max-width) {
-      @include maxSize($max-width, 580px);
+    @media only screen and (min-width: $base-width) {
+      @include maxSize();
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(none, 520px);
       flex-flow: column wrap;
       align-items: flex-start;
       align-content: space-between;
+      padding: 0 0 0 20px;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize($max-width, 580px);
       padding: 0 0 0 101px;
     }
   }
@@ -32,12 +41,23 @@
     margin: 36px 0 0;
     letter-spacing: -.07em;
 
-    @media only screen and (min-width: $max-width) {
-      @include maxSize(253px, 66px);
-      @include size(30%, auto);
-      margin-top: 69px;
+    @media only screen and (min-width: $base-width) {
+      font-size: 25px;
+      line-height: 34px;
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(250px, 66px);
+      flex-flow: row;
+      margin: 0;
+      padding: 0;
       font-size: 27px;
       line-height: 37px;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize();
+      @include size(30%, auto);
       text-align: left;
 
       &::after {
@@ -47,6 +67,11 @@
         margin: 0 0 7px 37px;
         background-color: $brand-color;
       }
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(253px, 66px);
+      margin-top: 69px;
     }
   }
 
@@ -63,13 +88,29 @@
     text-align: center;
     color: $base-color;
 
-    @media only screen and (min-width: $max-width) {
-      @include maxSize(441px, 86px);
-      @include size(34%, auto);
-      //margin-right: 70px;
+    @media only screen and (min-width: $base-width) {
+      @include maxSize(500px);
+      font-size: 16px;
+      line-height: 29px;
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(600px);
+      font-size: 18px;
+      text-align: justify;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(400px);
+      @include size(38%, auto);
       font-size: 18px;
       line-height: 29px;
       text-align: left;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(441px, 86px);
+      @include size(34%, auto);
     }
   }
 
@@ -79,15 +120,28 @@
     order: 4;
     margin-top: 36px;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
       @include maxSize(441px, 86px);
-      @include size(38%, auto);
-      order: 3;
+      order: 5;
       margin: 42px 0 34px;
 
       &_margin_zero {
         margin: 0;
       }
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize();
+      @include size(38%, auto);
+      order: 3;
+
+      &_margin_zero {
+        margin: 0;
+      }
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(441px, 86px);
     }
 
     &_margin_zero {
@@ -100,6 +154,16 @@
     margin-bottom: 27px;
     padding-right: 10px;
 
+    @media only screen and (min-width: $tablet-width) {
+      flex: 0 1 50%;
+      margin-bottom: 0;
+      text-align: center;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      text-align: left;
+    }
+
     @media only screen and (min-width: $max-width) {
       flex: 0 1 40%;
       margin-bottom: 0;
@@ -107,6 +171,10 @@
 
     &:nth-child(2n) {
       flex: 0 1 54%;
+
+      @media only screen and (min-width: $tablet-width) {
+        flex: 0 1 50%;
+      }
 
       @media only screen and (min-width: $max-width) {
         flex: 0 1 60%;
@@ -120,7 +188,7 @@
     line-height: 19px;
     color: $brand-color;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $common-width) {
       margin-bottom: 9px;
       font-size: 18px;
       line-height: 25px;
@@ -133,7 +201,7 @@
     line-height: 19px;
     color: $base-color;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $common-width) {
       font-size: 15px;
       line-height: 20px;
     }
@@ -143,12 +211,25 @@
   &__list {
     @include maxSize(190px);
     display: none;
-    order: 4;
-    margin-top: 79px;
+    margin-top: 30px;
+
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(220px);
+      @include size(40%, auto);
+      order: 6;
+      display: flex;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(190px);
+      @include size(20%, auto);
+      order: 4;
+      margin-bottom: 20px;
+    }
 
     @media only screen and (min-width: $max-width) {
-      @include size(20%, auto);
-      display: flex;
+      margin-top: 79px;
+      margin-bottom: 5px;
     }
   }
 
@@ -158,16 +239,32 @@
     @include list();
     @include size(100%, auto);
     display: none;
-    order: 5;
     list-style: none;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $base-width) {
       @include flex-content();
-      @include maxSize(623px);
-      @include size(60%, auto);
+      @include maxSize(500px);
+      @include size(100%, auto);
+      order: 3;
       flex-flow: row;
       justify-content: space-between;
       align-items: center;
+      margin-top: 30px;
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(700px);
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(590px);
+      @include size(60%, auto);
+      order: 5;
+      margin-top: 0;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(623px);
     }
   }
 
@@ -177,12 +274,17 @@
     padding-bottom: 6px;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 12px;
+    line-height: 17px;
     text-transform: uppercase;
     color: $base-color;
     border-bottom: 1px solid transparent;
     transition: color $regular-time, border $regular-time;
+
+    @media only screen and (min-width: $tablet-width) {
+      font-size: 14px;
+      line-height: 19px;
+    }
 
     &:hover {
       cursor: pointer;
@@ -207,10 +309,21 @@
     order: 3;
     margin-top: 36px;
 
+    @media only screen and (min-width: $base-width) {
+      @include maxSize();
+      @include size(100%, auto);
+      margin-top: 30px;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include size(61%, auto);
+      order: 6;
+      margin-top: 40px;
+    }
+
     @media only screen and (min-width: $max-width) {
       @include maxSize(811px, 482px);
       @include size(65%, auto);
-      order: 6;
       margin-top: 45px;
     }
   }
@@ -218,13 +331,13 @@
   &__carousel-wrapper {
     margin-left: calc(-100% - 21px);
 
-    @media only screen and (min-width: $max-width) {
-     margin-left: 0;
+    @media only screen and (min-width: $base-width) {
+      margin-left: 0;
     }
   }
 
   &__carousel-button {
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $base-width) {
       &:first-of-type {
         display: none;
       }
@@ -236,6 +349,21 @@
     @include size(100%, 241px);
     flex: 0 0 100%;
     margin-right: 21px;
+
+    @media only screen and (min-width: $base-width) {
+      @include maxSize(400px, 300px);
+      @include size(100%, 300px);
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(600px, 500px);
+      @include size(100%, 500px);
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(500px, 400px);
+      @include size(100%, 400px);
+    }
 
     @media only screen and (min-width: $max-width) {
       @include maxSize(679px, 482px);
