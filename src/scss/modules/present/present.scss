@@ -1,7 +1,7 @@
 .present {
   background: $accent-color;
 
-  @media only screen and (min-width: $max-width) {
+  @media only screen and (min-width: $tablet-width) {
     background-color: $dark-background;
   }
 
@@ -11,8 +11,17 @@
     @include flex-content();
     position: relative;
 
+    @media only screen and (min-width: $base-width) {
+      @include maxSize();
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize();
+      overflow: visible;
+    }
+
     @media only screen and (min-width: $max-width) {
-      max-width: none;
+      @include maxSize();
       overflow: visible;
     }
   }
@@ -31,13 +40,27 @@
     background: no-repeat url("assets/img/present-mobile.png");
     background-size: cover;
 
+    @media only screen and (min-width: $base-width) {
+      @include maxSize();
+      @include minSize(0, 550px);
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      @include minSize(0, 600px);
+      padding: 0 0 0 30px;
+      background: no-repeat url("assets/img/present-desctop.png");
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include minSize(0, 707px);
+      padding: 0 0 0 50px;
+    }
+
     @media only screen and (min-width: $max-width) {
       @include maxSize(1356px);
-      @include minSize(0, 707px);
       flex: 1 1 70%;
       margin: 0 auto;
       padding: 0 0 0 60px;
-      background: no-repeat url("assets/img/present-desctop.png");
     }
 
     &::after {
@@ -65,6 +88,19 @@
     text-align: left;
     color: $base-color;
 
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(425px, 96px);
+      margin: -20px 0 10px;
+      font-size: 33px;
+      line-height: 48px;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(480px, 96px);
+      margin: 0 0 15px;
+      font-size: 37px;
+    }
+
     @media only screen and (min-width: $max-width) {
       @include maxSize(671px, 105px);
       margin: -15px 0 19px;
@@ -87,8 +123,20 @@
     line-height: 24px;
     color: $base-color;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(600px, 90px);
+      margin-bottom: 20px;
+      line-height: 26px;
+    }
+
+    @media only screen and (min-width: $common-width) {
       @include maxSize(504px, 90px);
+      margin-bottom: 25px;
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    @media only screen and (min-width: $max-width) {
       margin-bottom: 41px;
       font-size: 22px;
       line-height: 30px;
@@ -113,9 +161,17 @@
     justify-content: space-between;
     align-items: stretch;
 
+    @media only screen and (min-width: $base-width) {
+      @include size(100%, 120px);
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      @include size(400px, 51px);
+      flex-flow: row;
+    }
+
     @media only screen and (min-width: $max-width) {
       @include size(434px, 51px);
-      flex-flow: row;
     }
   }
 
@@ -125,6 +181,10 @@
     justify-content: center;
     align-items: center;
     font-size: 13px;
+
+    @media only screen and (min-width: $tablet-width) {
+      @include size(190px, 51px);
+    }
 
     @media only screen and (min-width: $max-width) {
       @include size(207px, 51px);
@@ -162,9 +222,44 @@
     background-color: $dark-background;
     transition: left $regular-time, box-shadow $regular-time;
 
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(130px);
+      display: block;
+      margin-left: -90px;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      margin-left: -80px;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(150px);
+      margin-left: -68px;
+    }
+
     &:hover {
       left: 68px;
       box-shadow: 1px 0 2px $brand-20-color;
+
+      @media only screen and (min-width: $tablet-width) {
+        left: 90px;
+
+        .present__soc-network-text {
+          margin-right: 0;
+        }
+      }
+
+      @media only screen and (min-width: $common-width) {
+        left: 80px;
+
+        /*.present__soc-network-text {
+          margin-right: 0;
+        }*/
+      }
+
+      @media only screen and (min-width: $max-width) {
+        left: 68px;
+      }
 
       .present__soc-network-link {
         align-items: center;
@@ -181,9 +276,6 @@
       }
     }
 
-    @media only screen and (min-width: $max-width) {
-      display: block;
-    }
   }
 
   &__soc-network-link {
@@ -204,6 +296,18 @@
       display: block;
       margin: 45px 38px 0 0;
       background-color: $brand-color;
+
+      @media only screen and (min-width: $tablet-width) {
+        margin-right: 22px;
+      }
+
+      @media only screen and (min-width: $common-width) {
+        margin-right: 26px;
+      }
+
+      @media only screen and (min-width: $max-width) {
+        margin-right: 38px;
+      }
     }
   }
 
@@ -212,6 +316,18 @@
     border-bottom: 1px solid transparent;
     transform: rotate(90deg);
     transition: transform $regular-time;
+
+    @media only screen and (min-width: $tablet-width) {
+      margin-right: -16px;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      margin-right: -12px;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      margin-right: 0;
+    }
   }
 
   /*scroll*/
@@ -227,10 +343,22 @@
     text-decoration: none;
     background-color: $dark-background;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
       @include flex-content();
+      @include minSize(200px, 70px);
+      bottom: -35px;
       justify-content: center;
       align-items: center;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include minSize(220px, 80px);
+      bottom: -40px;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include minSize(247px, 97px);
+      bottom: -48.5px;
     }
 
     &:hover {
@@ -256,21 +384,31 @@
     @include transition(color);
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 13px;
+    line-height: 18px;
     text-transform: uppercase;
     color: $base-color;
     border: 1px solid transparent;
+
+    @media only screen and (min-width: $common-width) {
+      font-size: 14px;
+      line-height: 19px;
+    }
   }
 
   &__scroll-item {
     @include change-computing();
-    @include size(29px);
+    @include size(25px);
     margin-left: 12px;
-    padding: 6px 1px 0 0;
+    padding: 4px 1px 0 0;
     text-align: center;
     color: $brand-color;
     border: 1.5px solid $brand-color;
     border-radius: 50%;
+
+    @media only screen and (min-width: $common-width) {
+      @include size(29px);
+      padding: 6px 1px 0 0;
+    }
   }
 }

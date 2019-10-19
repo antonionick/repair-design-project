@@ -22,8 +22,8 @@
     @media only screen and (min-width: $tablet-width) {
       @include maxSize();
       @include minSize(750px);
-      @include size(100%, 100px);
-      padding: 0 10px 0 30px;
+      @include size(100%, 90px);
+      padding: 0 10px 0 40px;
     }
 
     @media only screen and (min-width: $common-width) {

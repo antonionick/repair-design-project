@@ -4,16 +4,15 @@
   margin: 0 auto;
 
   @media only screen and (min-width: $base-width) {
-    @include maxSize();
-    @include minSize($base-width);
+    @include minSize(490px);
   }
 
   @media only screen and (min-width: $tablet-width) {
-    @include minSize($tablet-width);
+    @include minSize(750px);
   }
 
   @media only screen and (min-width: $common-width) {
-    @include minSize($common-width);
+    @include minSize(1000px);
   }
 
   @media only screen and (min-width: $max-width) {
