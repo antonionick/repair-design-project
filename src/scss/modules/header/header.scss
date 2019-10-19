@@ -1,7 +1,7 @@
 .header {
   background-color: $base-background;
 
-  @media only screen and (min-width: $max-width) {
+  @media only screen and (min-width: $tablet-width) {
     background-color: $dark-background;
   }
 
@@ -13,8 +13,28 @@
     justify-content: space-between;
     align-items: center;
 
+    @media only screen and (min-width: $base-width) {
+      @include maxSize();
+      @include minSize(480px);
+      padding: 0 10px;
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize();
+      @include minSize(750px);
+      @include size(100%, 100px);
+      padding: 0 10px 0 30px;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize();
+      @include minSize(1000px);
+      @include size(100%, 76px);
+      padding: 0 10px 0 50px;
+    }
+
     @media only screen and (min-width: $max-width) {
-      height: 83px;
+      @include size(100%, 83px);
       padding: 0 100px 0 82px;
     }
   }
@@ -22,10 +42,14 @@
   /*nav*/
   &__nav {
     display: none;
-    flex: 0 1 45%;
+    flex: 0 1 50%;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
       display: block;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      flex: 0 1 45%;
     }
   }
 
@@ -38,13 +62,21 @@
 
   &__list-link {
     @include futuraBook();
-    font-size: 14px;
+    font-size: 12px;
     line-height: 16px;
     text-transform: uppercase;
     text-decoration: none;
     color: $base-color;
     border-bottom: 1px solid transparent;
     transition: border $regular-time, color $regular-time;
+
+    @media only screen and (min-width: $common-width) {
+      font-size: 13px;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      font-size: 14px;
+    }
 
     &_now {
       color: $brand-color;
@@ -67,7 +99,25 @@
     justify-content: space-between;
     align-items: center;
 
+    @media only screen and (min-width: $base-width) {
+      @include maxSize(250px);
+      flex: 0 1 54%;
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(120px);
+      flex: 0 1 20%;
+      flex-flow: column;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(270px);
+      flex: 0 1 28%;
+      flex-flow: row;
+    }
+
     @media only screen and (min-width: $max-width) {
+      @include maxSize();
       flex: 0 1 26%;
     }
   }
@@ -76,11 +126,15 @@
   &__number {
     @include futuraDemic();
     font-size: 12px;
+    line-height: 16px;
     color: $base-color;
+
+    @media only screen and (min-width: $common-width) {
+      font-size: 13px;
+    }
 
     @media only screen and (min-width: $max-width) {
       font-size: 14px;
-      line-height: 16px;
     }
   }
 
@@ -91,7 +145,7 @@
     @include size(161px, 37px);
     display: none;
     padding: 12px 0;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
     color: $base-color;
@@ -102,8 +156,28 @@
     box-shadow: 0 5px 15px $brand-20-color;
     transition: color $regular-time, box-shadow $regular-time;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $base-width) {
+      @include size(120px, 30px);
       display: block;
+      padding: 0;
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      margin-top: 10px;
+      padding: 0;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include size(130px, 30px);
+      display: block;
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include size(161px, 37px);
+      padding: 12px 0;
     }
 
     &:hover {

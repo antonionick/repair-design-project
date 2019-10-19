@@ -3,6 +3,19 @@
   @include maxSize($base-width);
   margin: 0 auto;
 
+  @media only screen and (min-width: $base-width) {
+    @include maxSize();
+    @include minSize($base-width);
+  }
+
+  @media only screen and (min-width: $tablet-width) {
+    @include minSize($tablet-width);
+  }
+
+  @media only screen and (min-width: $common-width) {
+    @include minSize($common-width);
+  }
+
   @media only screen and (min-width: $max-width) {
     @include maxSize($max-width);
   }
