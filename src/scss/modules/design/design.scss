@@ -3,16 +3,22 @@
   padding-top: 176px;
   background-color: $base-background;
 
-  @media only screen and (min-width: $max-width) {
+  @media only screen and (min-width: $tablet-width) {
     position: relative;
-    margin-top: 152px;
+    margin: 0;
+    padding-top: 80px;
+    background-color: $dark-background;
+  }
+
+  @media only screen and (min-width: $common-width) {
+    margin-top: 80px;
     padding: 0;
     background: $base-color;
 
     &::after {
       content: "";
       position: absolute;
-      top: 470px;
+      top: 460px;
       bottom: 0;
       left: 0;
       right: 0;
@@ -21,11 +27,20 @@
     }
   }
 
+  @media only screen and (min-width: $max-width) {
+    margin-top: 152px;
+
+    &::after {
+      top: 470px;
+    }
+  }
+
   /*wrapper*/
   &__wrapper {
     padding: $base-padding;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize();
       padding: 0;
     }
   }
@@ -34,7 +49,7 @@
   &__title {
     color: $base-color;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $common-width) {
       color: $title-color;
     }
   }
@@ -52,11 +67,21 @@
     text-align: center;
     color: $base-color;
 
-    @media only screen and (min-width: $max-width) {
-      @include maxSize(763px, 57px);
+    @media only screen and (min-width: $base-width) {
+      @include maxSize(470px);
+      font-size: 17px;
+      line-height: 23px;
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(740px);
       margin: 24px auto 0;
       font-size: 20px;
       line-height: 27px;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(763px, 57px);
       color: $accent-color;
     }
   }
@@ -64,7 +89,7 @@
   &__text-br {
     display: block;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
       display: none;
 
       &_save {
@@ -81,11 +106,21 @@
     flex-flow: column;
     margin: 39px 0 10px;
 
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize();
+      flex-flow: row wrap;
+      justify-content: space-around;
+      margin: 39px auto 0;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(1000px, none);
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
+
     @media only screen and (min-width: $max-width) {
       @include maxSize(1236px, none);
-      flex-flow: row;
-      justify-content: space-between;
-      margin: 39px auto 0;
     }
   }
 
@@ -93,7 +128,9 @@
   &__offer {
     margin-bottom: 60px;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
+      margin-bottom: 40px;
+
       &:nth-child(2),
       &:nth-child(3) {
         & .design__offer-img {
@@ -114,6 +151,14 @@
           background-size: cover;
         }
       }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @media only screen and (min-width: $common-width) {
+      margin: 0;
     }
 
     &:last-child {
@@ -122,7 +167,7 @@
   }
 
   &__offer-wrapper-img {
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
       &::after {
         content: '';
         position: absolute;
@@ -140,11 +185,6 @@
     &_big {
       width: auto;
       margin-left: -350px;
-
-      @media only screen and (min-width: $max-width) {
-        width: auto;
-        margin-left: -350px;
-      }
     }
   }
 
@@ -152,16 +192,15 @@
   &__offer-list {
     max-height: 154px;
 
-    @media only screen and (min-width: 500px) {
+    @media only screen and (min-width: $base-width) {
       max-height: none;
     }
   }
 
   /*offer-item-more ...*/
   &__offer-item-more {
-    @media only screen and (min-width: 500px) {
+    @media only screen and (min-width: $base-width) {
       display: none;
     }
   }
-
 }
