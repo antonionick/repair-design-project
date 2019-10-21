@@ -4,7 +4,7 @@
   margin: 0 auto;
 
   @media only screen and (min-width: $base-width) {
-    @include minSize(490px);
+    @include minSize();
   }
 
   @media only screen and (min-width: $tablet-width) {

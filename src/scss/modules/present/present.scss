@@ -298,7 +298,7 @@
       background-color: $brand-color;
 
       @media only screen and (min-width: $tablet-width) {
-        margin-right: 22px;
+        margin-right: 19px;
       }
 
       @media only screen and (min-width: $common-width) {
@@ -319,10 +319,12 @@
 
     @media only screen and (min-width: $tablet-width) {
       margin-right: -16px;
+      font-size: 13px;
     }
 
     @media only screen and (min-width: $common-width) {
       margin-right: -12px;
+      font-size: 14px;
     }
 
     @media only screen and (min-width: $max-width) {
