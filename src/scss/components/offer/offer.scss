@@ -4,10 +4,25 @@
   overflow: visible;
   padding-bottom: 20px;
 
+  @media only screen and (min-width: $base-width) {
+    padding-bottom: 28px;
+  }
+
+  @media only screen and (min-width: $tablet-width) {
+    @include maxSize(360px, none);
+    flex: 0 1 50%;
+    margin: 0;
+    padding-bottom: 24px;
+  }
+
+  @media only screen and (min-width: $common-width) {
+    @include maxSize(320px, none);
+    flex: 0 1 33%;
+  }
+
   @media only screen and (min-width: $max-width) {
     @include maxSize(392px, none);
-    flex: 0 1 33%;
-    margin: 0;
+    padding-bottom: 28px;
   }
 
   /*wrapper-img*/
@@ -17,6 +32,16 @@
     @include size();
     position: relative;
     margin: 0;
+
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(100%, 390px);
+      @include size(100%, 390px);
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(100%, 350px);
+      @include size(100%, 350px);
+    }
 
     @media only screen and (min-width: $max-width) {
       @include maxSize(100%, 421px);
@@ -29,6 +54,14 @@
     @include change-computing();
     @include size(100%, 365px);
     display: block;
+
+    @media only screen and (min-width: $tablet-width) {
+      @include size(100%, 390px);
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include size(100%, 350px);
+    }
 
     @media only screen and (min-width: $max-width) {
       @include size(100%, 421px);
@@ -45,6 +78,21 @@
     padding: 21px 10px 0 31px;
     background-color: $base-color;
     box-shadow: 5px 10px 20px $offer-background;
+
+    @media only screen and (min-width: $base-width) {
+      @include maxSize(400px);
+      margin: -100px auto 0;
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(310px);
+      margin: -118px auto 0;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(270px);
+      margin: -106px auto 0;
+    }
 
     @media only screen and (min-width: $max-width) {
       @include maxSize(330px);
@@ -63,6 +111,21 @@
     line-height: 21px;
     text-transform: capitalize;
     color: $accent-color;
+
+    @media only screen and (min-width: $base-width) {
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      font-size: 16px;
+      line-height: 21px;
+    }
 
     @media only screen and (min-width: $max-width) {
       font-size: 18px;
@@ -89,6 +152,21 @@
     line-height: 22px;
     color: $list-color;
 
+    @media only screen and (min-width: $base-width) {
+      font-size: 15px;
+      line-height: 25px;
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
     @media only screen and (min-width: $max-width) {
       font-size: 15px;
       line-height: 25px;
@@ -109,12 +187,32 @@
     text-transform: uppercase;
     box-shadow: 5px 5px 10px $brand-30-color;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $base-width) {
       @include maxSize(228px, 54px);
       @include size(228px, 54px);
+      bottom: -28px;
       padding: 15px 5px;
       font-size: 18px;
       line-height: 25px;
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(230px, 48px);
+      @include size(230px, 48px);
+      bottom: -24px;
+      padding: 13px 5px;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(210px, 48px);
+      @include size(210px, 48px);
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(228px, 54px);
+      @include size(228px, 54px);
+      bottom: -28px;
+      padding: 15px 5px;
     }
   }
 }

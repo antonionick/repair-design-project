@@ -3,7 +3,7 @@
   padding: 83px 0 0;
   background-color: $base-color;
 
-  @media only screen and (min-width: $max-width) {
+  @media only screen and (min-width: $tablet-width) {
     margin-top: 147px;
     padding: 0;
   }
@@ -14,7 +14,8 @@
     @include size();
     padding: $base-padding;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize();
       padding: 0;
     }
   }
@@ -30,11 +31,21 @@
     flex-flow: column;
     margin-top: 40px;
 
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize();
+      flex-flow: row wrap;
+      justify-content: space-around;
+      margin: 31px auto 0;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(1000px, none);
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
+
     @media only screen and (min-width: $max-width) {
       @include maxSize(1236px, none);
-      flex-flow: row;
-      justify-content: space-between;
-      margin: 31px auto 0;
     }
   }
 
@@ -44,6 +55,14 @@
 
     &:last-child {
       margin-bottom: 20px;
+
+      @media only screen and (min-width: $tablet-width) {
+        margin-top: 20px;
+      }
+
+      @media only screen and (min-width: $common-width) {
+        margin-top: 0;
+      }
 
       @media only screen and (min-width: $max-width) {
         margin-bottom: 0;
@@ -57,6 +76,16 @@
       width: auto;
       margin-left: -207px;
 
+      @media only screen and (min-width: $tablet-width) {
+        width: 300%;
+        margin-left: -365px;
+      }
+
+      @media only screen and (min-width: $common-width) {
+        width: 300%;
+        margin-left: -322px;
+      }
+
       @media only screen and (min-width: $max-width) {
         width: 300%;
         margin-left: -395px;
@@ -69,22 +98,39 @@
     @include change-computing();
     @include maxSize(1365px);
     display: none;
-    margin-top: 100px;
+    margin-top: 0;
+
+    @media only screen and (min-width: $tablet-width) {
+      @include flex-content();
+      flex-flow: row wrap;
+      justify-content: flex-end;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      margin-top: 50px;
+    }
 
     @media only screen and (min-width: $max-width) {
-      @include flex-content();
-      justify-content: space-between;
+      margin-top: 100px;
     }
   }
 
   /*info*/
   &__info {
     @include change-computing();
-    @include maxSize(810px);
+    @include maxSize();
     @include minSize(0, 691px);
     position: relative;
-    flex: 0 1 60%;
+    flex: 0 1 100%;
     background: no-repeat url("assets/img/repair-back.png");
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(810px);
+      @include minSize(0, 691px);
+      flex: 0 1 60%;
+    }
 
     &::after {
       @include change-computing();
@@ -92,11 +138,20 @@
       content: "";
       position: absolute;
       top: 55px;
-      left: -155px;
+      left: -220px;
       display: block;
       background-color: transparent;
       border: 3px solid $brand-color;
       border-radius: 50%;
+
+      @media only screen and (min-width: $common-width) {
+        display: none;
+      }
+
+      @media only screen and (min-width: $max-width) {
+        left: -155px;
+        display: block;
+      }
     }
   }
 
@@ -107,21 +162,15 @@
     @include maxSize(450px);
     position: relative;
     top: 117px;
-    left: 356px;
+    left: 290px;
     z-index: 1;
     align-items: center;
     justify-content: space-between;
     padding: 9px 0;
     background: white;
 
-    &:nth-child(2) {
-      top: 187px;
-      left: 442px;
-    }
-
-    &:nth-child(3) {
-      top: 305px;
-      left: 450px;
+    @media only screen and (min-width: $common-width) {
+      left: 78px;
 
       &::after {
         @include change-computing();
@@ -132,13 +181,102 @@
         left: 0;
         right: 0;
         z-index: -1;
-        background: no-repeat url("assets/img/repair-back.png") 178.4% 72.3%;
+        background: no-repeat url("assets/img/repair-back.png") 31% 20%;
+      }
+    }
+
+    @media only screen and (min-width: $max-width) {
+      left: 356px;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    &:nth-child(2) {
+      top: 187px;
+      left: 377px;
+
+      @media only screen and (min-width: $common-width) {
+        left: 78px;
+
+        &::after {
+          @include change-computing();
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: -1;
+          background: no-repeat url("assets/img/repair-back.png") 31% 42%;
+        }
+      }
+
+      @media only screen and (min-width: $max-width) {
+        left: 442px;
+
+        &::after {
+          content: none;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      top: 305px;
+      left: 383px;
+
+      @media only screen and (min-width: $common-width) {
+        top: 280px;
+        left: 78px;
+
+        &::after {
+          background: no-repeat url("assets/img/repair-back.png") 31% 68%;
+        }
+      }
+
+      @media only screen and (min-width: $max-width) {
+        top: 305px;
+        left: 450px;
+
+        &::after {
+          background: no-repeat url("assets/img/repair-back.png") 178.4% 72.3%;
+        }
+      }
+
+      &::after {
+        @include change-computing();
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        background: no-repeat url("assets/img/repair-back.png") 152% 72.3%;
       }
     }
 
     &:last-child {
       top: 360px;
-      left: 390px;
+      left: 330px;
+
+      @media only screen and (min-width: $common-width) {
+        left: 78px;
+
+        &::after {
+          background: no-repeat url("assets/img/repair-back.png") 31% 92%;
+        }
+      }
+
+      @media only screen and (min-width: $max-width) {
+        top: 360px;
+        left: 390px;
+
+        &::after {
+          background: no-repeat url("assets/img/repair-back.png") 154.7% 92%;
+        }
+      }
 
       &::after {
         @include change-computing();
@@ -149,7 +287,7 @@
         left: 0;
         right: 0;
         z-index: -1;
-        background: no-repeat url("assets/img/repair-back.png") 154.7% 92%;
+        background: no-repeat url("assets/img/repair-back.png") 131% 92%;
       }
     }
   }
@@ -190,14 +328,22 @@
     @include maxSize(506px);
     @include size();
     flex-flow: column;
+
+    @media only screen and (min-width: $common-width) {
+      @include size(40%, auto);
+    }
   }
 
   /*form*/
   &__form {
     @include maxSize(506px);
-    margin-top: 106px;
+    margin-top: 0;
     padding: 28px 49px;
     background: $dark-background;
+
+    @media only screen and (min-width: $common-width) {
+      margin-top: 106px;
+    }
   }
 
   &__form-title {
