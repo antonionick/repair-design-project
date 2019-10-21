@@ -1,10 +1,22 @@
 .control {
   background-color: $base-background;
 
-  @media only screen and (min-width: $max-width) {
+  @media only screen and (min-width: $tablet-width) {
     position: relative;
     background-color: $dark-background;
 
+    &::after {
+      content: "";
+      position: absolute;
+      top: 340px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: white;
+    }
+  }
+
+  @media only screen and (min-width: $common-width) {
     &::after {
       content: "";
       position: absolute;
@@ -19,6 +31,18 @@
   /*wrapper*/
   &__wrapper {
     padding: $base-padding;
+
+    @media only screen and (min-width: $base-width) {
+      @include maxSize();
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(780px);
+    }
+
+    @media only screen and (min-width: $common-width) {
+      padding: 0;
+    }
 
     @media only screen and (min-width: $max-width) {
       padding: 0;
@@ -40,9 +64,13 @@
     margin-top: 40px;
     padding-bottom: 56.25%;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $common-width) {
       @include maxSize(817px, 434px);
       margin: 31px auto 0;
+      padding-bottom: 43%;
+    }
+
+    @media only screen and (min-width: $max-width) {
       padding-bottom: 31.3%;
     }
   }
@@ -64,7 +92,7 @@
     margin: 28px auto 0;
     background-color: $brand-color;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
       margin-top: 62px;
     }
   }
@@ -83,7 +111,12 @@
     text-align: center;
     color: $base-color;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $base-width) {
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    @media only screen and (min-width: $tablet-width) {
       @include maxSize(681px, 130px);
       margin: 34px auto 0;
       font-size: 20px;
@@ -95,7 +128,7 @@
   &__text-br {
     display: none;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
       display: block;
     }
   }
@@ -106,18 +139,22 @@
     z-index: 1;
     margin-top: 37px;
 
-    @media only screen and (min-width: $max-width) {
-      @include maxSize(769px, none);
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(750px, none);
       flex-flow: row wrap;
       justify-content: space-between;
       margin: 91px auto 0;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(769px, none);
     }
   }
 
   &__form-content-wrapper {
     @include size(100%, 152px);
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
       @include size(68%, auto);
       order: 1;
       flex-flow: row nowrap;
@@ -126,19 +163,19 @@
   }
 
   &__form-content {
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
       flex: 0 1 45%;
     }
   }
 
   &__form-label {
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
       color: rgba(54, 54, 54, 0.5);
     }
   }
 
   &__form-input {
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
       color: $accent-color;
       border-bottom: 1px solid rgba(54, 54, 54, 0.3);
 
@@ -149,15 +186,14 @@
   }
 
   &__form-checkbox-wrapper {
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
       order: 3;
       margin: 35px auto 0;
     }
   }
 
   &__form-checkbox-text {
-    @media only screen and (min-width: $max-width) {
-
+    @media only screen and (min-width: $tablet-width) {
       color: $title-color;
     }
   }
@@ -165,7 +201,7 @@
   &__form-submit {
     transition: color $regular-time, box-shadow $regular-time;
 
-    @media only screen and (min-width: $max-width) {
+    @media only screen and (min-width: $tablet-width) {
       @include maxSize(26%);
       order: 2;
       margin-top: 0;
