@@ -3,8 +3,16 @@
   @include maxSize(339px);
   @include size();
 
-  @media only screen and (min-width: 1440px) {
+  @media only screen and (min-width: $tablet-width) {
+    @include maxSize(339px);
+  }
+
+  @media only screen and (min-width: $common-width) {
     @include maxSize(307px);
+  }
+
+  @media only screen and (min-width: $max-width) {
+    @include maxSize(375px);
   }
 
   /*wrapper-icon*/
@@ -28,7 +36,11 @@
     margin: 0 0 0 35px;
     background-color: $base-color;
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $base-width) {
+      @include maxSize(302px, 352px);
+    }
+
+    @media only screen and (min-width: $common-width) {
       @include maxSize(272px, 358px);
       @include size(100%, 358px);
     }
@@ -38,7 +50,7 @@
   &__img {
     @include size(303px, 352px);
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $common-width) {
       @include size(auto, 358px);
     }
   }
@@ -54,7 +66,13 @@
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);;
     background-color: $base-color;
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(250px);
+      margin-left: 61px;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(233px);
       margin-left: 55px;
     }
   }

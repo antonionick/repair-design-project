@@ -3,14 +3,13 @@
   padding-top: 66px;
   background-color: $base-background;
 
-  @media only screen and (min-width: 1440px) {
-    padding-top: 95px;
+  @media only screen and (min-width: $tablet-width) {
     background-color: $dark-background;
 
     &::after {
       content: "";
       position: absolute;
-      top: 501px;
+      top: 690px;
       bottom: 0;
       left: 0;
       right: 0;
@@ -18,11 +17,22 @@
     }
   }
 
+  @media only screen and (min-width: $common-width) {
+    padding-top: 95px;
+
+    &::after {
+      top: 501px;
+    }
+  }
+
   /*wrapper*/
   &__wrapper {
-    @media only screen and (min-width: 1440px) {
-      @include maxSize(1063px);
+    @media only screen and (min-width: $tablet-width) {
       margin: 0 auto;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(1063px);
     }
   }
 
@@ -49,7 +59,12 @@
     text-align: center;
     color: $base-color;
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $tablet-width) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @media only screen and (min-width: $common-width) {
       @include maxSize(476px);
       font-size: 20px;
       line-height: 27px;
@@ -59,15 +74,14 @@
       display: none;
       margin-top: 17px;
       padding: 0;
+      font-size: 20px;
+      line-height: 34px;
       text-align: center;
       color: $accent-color;
 
-      @media only screen and (min-width: 1440px) {
+      @media only screen and (min-width: $common-width) {
         @include maxSize(558px, 136px);
         display: block;
-        font-size: 20px;
-        line-height: 34px;
-
       }
     }
   }
@@ -85,7 +99,12 @@
     flex-flow: column;
     margin-top: 41px;
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $tablet-width) {
+      flex-flow: row wrap;
+      justify-content: space-around;
+    }
+
+    @media only screen and (min-width: $common-width) {
       margin-top: 38px;
       flex-flow: row;
       justify-content: space-between;
@@ -94,13 +113,19 @@
 
   /*person*/
   &__person {
-    @include maxSize(375px);
     margin: 37px auto 0;
     padding: 17px 18px 0;
 
-    @media only screen and (min-width: 1440px) {
-      margin: 0;
+    @media only screen and (min-width: $base-width) {
       padding: 0;
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      margin: 0 0 20px 0;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      margin: 0;
 
       & .person__img {
         margin-left: -12px;
@@ -117,11 +142,15 @@
     position: relative;
     z-index: 1;
     display: none;
-    margin: 55px auto 0;
+    margin: 30px auto 0;
     background-color: $brand-color;
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $common-width) {
       display: block;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      margin-top: 55px;
     }
   }
 }
