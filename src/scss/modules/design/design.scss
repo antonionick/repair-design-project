@@ -117,7 +117,6 @@
       @include maxSize(1000px, none);
       flex-flow: row nowrap;
       justify-content: space-between;
-      margin: 39px auto 0;
     }
 
     @media only screen and (min-width: $max-width) {
