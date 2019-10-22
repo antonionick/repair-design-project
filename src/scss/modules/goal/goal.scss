@@ -2,26 +2,43 @@
   position: relative;
   display: none;
 
-  @media only screen and (min-width: $max-width) {
+  @media only screen and (min-width: $tablet-width) {
     display: block;
-    margin-top: -20px;
+    padding-top: 20px;
     background: $dark-background;
+  }
+
+  @media only screen and (min-width: $common-width) {
+    margin-top: -20px;
   }
 
   /*wrapper*/
   &__wrapper {
     @include flex-content();
     @include change-computing();
-    @include maxSize(1236px, 686px);
-    @include size(100%, 686px);
+    @include maxSize();
+    @include size();
+    @include basePadding();
     flex-flow: column wrap;
     align-content: space-between;
     margin: 0 auto;
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(1000px, 660px);
+      @include size(100%, 660px);
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(1236px, 686px);
+      @include size(100%, 686px);
+      padding: 0;
+    }
   }
 
   /*about*/
   &__about {
     @include futuraDemic();
+    order: 1;
     font-size: 15px;
     line-height: 21px;
     text-transform: uppercase;
@@ -32,41 +49,64 @@
   &__title {
     @include change-computing();
     @include yesevaOne();
-    @include maxSize(304px, 66px);
-    @include size(25%, auto);
+    @include maxSize();
+    @include size();
     position: relative;
-    margin: 18px 0 0;
+    order: 2;
+    margin: 10px 0 0;
     font-style: normal;
     font-weight: normal;
     font-size: 27px;
     line-height: 37px;
+    text-align: center;
     text-transform: uppercase;
     color: $brand-color;
 
-    &::after {
-      @include size(91px, 1px);
-      content: "";
-      position: absolute;
-      bottom: 13px;
-      right: 0;
-      background-color: $brand-color;
-    }
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(304px, 66px);
+      @include size(25%, auto);
+      margin: 18px 0 0;
+      text-align: left;
 
+      &::after {
+        @include size(91px, 1px);
+        content: "";
+        position: absolute;
+        bottom: 13px;
+        right: 0;
+        background-color: $brand-color;
+      }
+    }
   }
 
   &__title-br {
-    display: block;
+    display: none;
+
+    @media only screen and (min-width: $common-width) {
+      display: block;
+    }
   }
 
   /*text wrapper*/
   &__text-wrapper {
     @include flex-content();
     @include change-computing();
-    @include maxSize(337px, 375px);
-    @include minSize(0, 323px);
-    @include size(30%, auto);
+    @include size(100%, auto);
     flex-flow: column;
-    margin-top: 92px;
+    order: 3;
+    margin: 20px auto 0;
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(337px, 375px);
+      @include minSize(0, 323px);
+      @include size(30%, auto);
+      margin: 92px 0 0;
+      padding-right: 10px;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      padding: 0;
+    }
   }
 
   /*text-page*/
@@ -83,54 +123,110 @@
 
   /*text-title*/
   &__text-title {
+    @include maxSize(750px);
     @include yesevaOne();
     order: 2;
-    margin: 22px 0 0;
+    align-self: center;
+    margin: 10px 0 0;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
     line-height: 23px;
     text-transform: uppercase;
     color: $brand-color;
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize();
+      align-self: flex-start;
+      margin: 22px 0 0;
+    }
   }
 
   &__text-title-br {
-    display: block;
+    display: none;
+
+    @media only screen and (min-width: $common-width) {
+      display: block;
+    }
   }
 
   /*text*/
   &__text {
+    @include maxSize(750px);
     @include futuraBook();
     order: 3;
+    align-self: center;
     margin: 16px 0 0;
     font-size: 15px;
     line-height: 25px;
     color: #FFFFFF;
+    text-align: justify;
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(none);
+      align-self: left;
+      text-align: left;
+    }
   }
 
   /*list*/
   &__list {
     @include maxSize(287px);
-    margin: 61px 0 0;
+    order: 6;
+    margin: 20px auto 0;
+
+    @media only screen and (min-width: $common-width) {
+      order: 4;
+      margin: 61px 0 0;
+      padding-right: 10px;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      padding-right: 0;
+    }
   }
 
   /*description*/
   &__description {
-    @include maxSize(765px);
-    @include size(63%, auto);
+    @include maxSize(750px);
+    @include size();
+    order: 4;
     flex-flow: row nowrap;
     justify-content: space-between;
-    margin-top: 36px;
+    margin: 36px auto 0;
 
-    &_first {
-      margin-top: 87px;
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(600px);
+      @include size(63%, auto);
+      order: 5;
+      margin: 36px 0 0;
+
+      &_first {
+        margin-top: 60px;
+      }
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(765px);
+
+      &_first {
+        margin-top: 87px;
+      }
     }
   }
 
   &__description-item {
     @include maxSize(120px);
     opacity: .3;
-    flex: 0 1 17%;
+    flex: 0 1 25%;
+
+    @media only screen and (min-width: $common-width) {
+      flex: 0 1 20%;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      flex: 0 1 17%;
+    }
 
     &_current {
       opacity: 1;
@@ -166,8 +262,19 @@
   /*img*/
   &__wrapper-img {
     @include change-computing();
-    @include maxSize(765px, 376px);
-    margin-top: 44px;
+    @include maxSize(750px, 376px);
+    order: 5;
+    margin: 30px auto 0;
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(600px);
+      margin: 44px 0 0;
+      order: 6;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(765px);
+    }
   }
 
   &__img {
