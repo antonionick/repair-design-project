@@ -1,13 +1,24 @@
 .comment {
   @include flex-content();
-  @include maxSize(376px, 428px);
+  @include maxSize(350px, 450px);
   @include change-computing();
   overflow: visible;
   flex-flow: row wrap;
   align-items: center;
-  margin-bottom: 36px;
-  padding: 24px 10px 0 20px;
+  margin-bottom: 50px;
+  padding: 20px 10px 0 20px;
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.04);
+
+  @media only screen and (min-width: $common-width) {
+    flex: 0 1 32%;
+    margin-bottom: 24px;
+    padding: 20px 10px 0 15px;
+  }
+
+  @media only screen and (min-width: $max-width) {
+    @include maxSize(376px, 428px);
+    padding: 24px 10px 0 20px;
+  }
 
   /*title*/
   &__title {
@@ -30,8 +41,12 @@
     @include maxSize(76px, 76px);
     @include size();
     order: 1;
-    margin-right: 23px;
+    margin-right: 20px;
     border-radius: 50%;
+
+    @media only screen and (min-width: $max-width) {
+      margin-right: 23px;
+    }
   }
 
   /*text*/
@@ -48,7 +63,15 @@
 
   &__text_paragraph {
     display: block;
-    margin-top: 14px;
+    margin-top: 10px;
+
+    @media only screen and (min-width: $common-width) {
+      margin-top: 8px;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      margin-top: 14px;
+    }
   }
 
   /*results*/
@@ -60,8 +83,18 @@
     order: 4;
     justify-content: space-between;
     align-items: stretch;
-    margin: 58px 0 -28px -20px;
+    margin: 20px 0 -28px -20px;
     box-shadow: 5px 5px 20px $brand-50-color;
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(none, 48px);
+      margin: 20px 0 -24px -15px;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(293px, 54px);
+      margin: 58px 0 -28px -20px;
+    }
   }
 
   /*result*/
@@ -83,6 +116,14 @@
 
   &__result-img {
     @include size(36px);
+
+    @media only screen and (min-width: $common-width) {
+      @include size(32px);
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include size(36px);
+    }
   }
 
   &__result-text {

@@ -17,6 +17,7 @@
 
     @media only screen and (min-width: $base-width) {
       @include maxSize();
+      padding: 0;
     }
 
     @media only screen and (min-width: $common-width) {
@@ -90,12 +91,14 @@
 
     @media only screen and (min-width: $base-width) {
       @include maxSize(500px);
+      @include basePadding();
       font-size: 16px;
       line-height: 29px;
     }
 
     @media only screen and (min-width: $tablet-width) {
       @include maxSize(600px);
+      padding: 0;
       font-size: 18px;
       text-align: justify;
     }
@@ -117,6 +120,7 @@
   /*description*/
   &__description {
     @include change-computing();
+    @include basePadding();
     order: 4;
     margin-top: 36px;
 
@@ -124,6 +128,7 @@
       @include maxSize(441px, 86px);
       order: 5;
       margin: 42px 0 34px;
+      padding: 0;
 
       &_margin_zero {
         margin: 0;
@@ -245,6 +250,7 @@
       @include flex-content();
       @include maxSize(500px);
       @include size(100%, auto);
+      @include basePadding();
       order: 3;
       flex-flow: row;
       justify-content: space-between;
@@ -254,6 +260,7 @@
 
     @media only screen and (min-width: $tablet-width) {
       @include maxSize(700px);
+      padding: 0;
     }
 
     @media only screen and (min-width: $common-width) {
@@ -313,12 +320,14 @@
       @include maxSize();
       @include size(100%, auto);
       margin-top: 30px;
+      padding-left: 18px;
     }
 
     @media only screen and (min-width: $common-width) {
       @include size(61%, auto);
       order: 6;
       margin-top: 40px;
+      padding: 0;
     }
 
     @media only screen and (min-width: $max-width) {

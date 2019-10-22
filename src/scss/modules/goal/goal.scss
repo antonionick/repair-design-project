@@ -16,7 +16,7 @@
   &__wrapper {
     @include flex-content();
     @include change-computing();
-    @include maxSize();
+    @include maxSize(750px);
     @include size();
     @include basePadding();
     flex-flow: column wrap;
@@ -123,7 +123,6 @@
 
   /*text-title*/
   &__text-title {
-    @include maxSize(750px);
     @include yesevaOne();
     order: 2;
     align-self: center;
@@ -152,7 +151,6 @@
 
   /*text*/
   &__text {
-    @include maxSize(750px);
     @include futuraBook();
     order: 3;
     align-self: center;
@@ -188,7 +186,6 @@
 
   /*description*/
   &__description {
-    @include maxSize(750px);
     @include size();
     order: 4;
     flex-flow: row nowrap;

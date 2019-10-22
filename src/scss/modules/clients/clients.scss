@@ -4,16 +4,20 @@
   display: none;
   margin-top: 88px;
 
-  @media only screen and (min-width: 1440px) {
+  @media only screen and (min-width: $tablet-width) {
     display: block;
   }
 
   /*wrapper*/
   &__wrapper {
     @include change-computing();
-    @include maxSize(1236px);
+    @include maxSize(none);
     overflow: visible;
     margin: 0 auto;
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize(1236px);
+    }
   }
 
   /*title*/
@@ -40,9 +44,19 @@
   &__wrapper-comments {
     @include flex-content();
     @include change-computing();
-    justify-content: space-between;
+    flex-flow: row wrap;
+    justify-content: space-around;
     align-items: stretch;
     overflow: visible;
     margin-top: 39px;
+    padding: 0 10px;
+
+    @media only screen and (min-width: $common-width) {
+      flex-flow: row;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      padding: 0;
+    }
   }
 }
