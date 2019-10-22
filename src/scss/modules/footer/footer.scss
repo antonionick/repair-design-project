@@ -2,26 +2,68 @@
   display: none;
   background-color: $title-color;
 
-  @media only screen and (min-width: $max-width) {
+  @media only screen and (min-width: $base-width) {
     display: block;
   }
 
   /*wrapper*/
   &__wrapper {
     @include flex-content();
-    @include size(100%, 133px);
+    @include maxSize();
+    @include size(100%, 90px);
     justify-content: space-between;
     align-items: center;
-    padding: 0 91px;
+
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize();
+      @include minSize(750px);
+      padding: 0 20px;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include size(100%, 110px);
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include size(100%, 133px);
+      padding: 0 91px;
+    }
+  }
+
+  /*logo*/
+  &__logo {
+    display: none;
+
+    @media only screen and (min-width: $tablet-width) {
+      display: block;
+      font-size: 14px;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      font-size: 15px;
+    }
   }
 
   /*list*/
   &__list {
     @include list();
-    flex: 0 1 45%;
-    justify-content: space-between;
+    flex: 0 1 100%;
+    justify-content: space-around;
     flex-flow: row;
     list-style: none;
+
+    @media only screen and (min-width: $base-width) {
+      display: flex;
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      flex: 0 1 60%;
+      justify-content: space-between;
+    }
+
+    @media only screen and (min-width: $common-width) {
+      flex: 0 1 45%;
+    }
   }
 
   &__list-link {
@@ -51,18 +93,34 @@
 
   /*info*/
   &__info {
-    @include flex-content();
+    display: none;
     flex: 0 1 26%;
-    justify-content: space-between;
-    align-items: center;
+
+    @media only screen and (min-width: $common-width) {
+      @include flex-content();
+      @include maxSize(150px);
+      flex-flow: row;
+    }
+
+    @media only screen and (min-width: $max-width) {
+      @include maxSize();
+      justify-content: space-between;
+      align-items: center;
+      flex: 0 1 26%;
+    }
   }
 
   /*number*/
   &__number {
     @include futuraDemic();
+    display: none;
     font-size: 14px;
     line-height: 16px;
     color: $base-color;
+
+    @media only screen and (min-width: $max-width) {
+      display: block;
+    }
   }
 
   /*button*/
@@ -70,6 +128,8 @@
     @include change-computing();
     @include futuraBook();
     @include size(161px, 37px);
+    display: none;
+    margin: 0;
     padding: 12px 0;
     font-size: 13px;
     line-height: 15px;
@@ -81,6 +141,10 @@
     background: $brand-color;
     box-shadow: 0 5px 15px $brand-20-color;
     transition: color $regular-time, box-shadow $regular-time;
+
+    @media only screen and (min-width: $common-width) {
+      display: block;
+    }
 
     &:hover {
       cursor: pointer;
