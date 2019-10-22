@@ -6,7 +6,7 @@
   padding: 76px 0 38px;
   background-color: $base-background;
 
-  @media only screen and (min-width: 1440px) {
+  @media only screen and (min-width: $tablet-width) {
     margin: 131px 0 0;
     padding: 0;
     background: no-repeat url("assets/img/back-about.png") 0 100%;
@@ -41,7 +41,11 @@
     flex-flow: column;
     padding: $base-padding;
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $base-width) {
+      @include maxSize();
+    }
+
+    @media only screen and (min-width: $common-width) {
       padding: 0;
     }
   }
@@ -54,16 +58,26 @@
     z-index: 1;
     order: 1;
 
-    @media only screen and (min-width: 1440px) {
-      @include maxSize(883px, 445px);
-      @include size(100%, 445px);
+    @media only screen and (min-width: $base-width) {
+      @include maxSize();
       margin: 0 auto;
-      padding: 34px 181px;
+      padding: 50px;
       background-color: $dark-background;
+    }
+
+    @media only screen and (min-width: $tablet-width) {
+      @include maxSize(750px, 445px);
+      @include size(100%, 445px);
+      padding: 20px 100px;
 
       & > .form__content-wrapper {
         justify-content: space-between;
       }
+    }
+
+    @media only screen and (min-width: $common-width) {
+      @include maxSize(883px, 445px);
+      padding: 34px 181px;
     }
   }
 
@@ -73,7 +87,7 @@
     line-height: 28px;
     text-transform: uppercase;
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and ($tablet-width) {
       margin-bottom: 45px;
     }
   }
@@ -81,7 +95,7 @@
   &__form-content {
     margin-top: 63px;
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $tablet-width) {
       @include maxSize(231px);
       margin-top: 0;
 
@@ -103,7 +117,11 @@
 
   /*checkbox*/
   &__form-checkbox-wrapper {
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $tablet-width) {
+      margin: 33px 110px 0;
+    }
+
+    @media only screen and (min-width: $common-width) {
       margin: 33px 118px 0;
     }
   }
@@ -113,7 +131,7 @@
     padding: 0;
     transition: color $regular-time, box-shadow $regular-time;
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $tablet-width) {
       @include maxSize(200px, 51px);
       margin: 40px auto 0;
     }
@@ -128,7 +146,7 @@
     order: 3;
     margin-top: 41px;
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $tablet-width) {
       @include maxSize(589px);
       align-self: center;
       order: 3;
@@ -149,7 +167,7 @@
     text-transform: uppercase;
     color: $brand-color;
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $tablet-width) {
       font-size: 20px;
       line-height: 28px;
     }
@@ -163,7 +181,7 @@
   &__br {
     display: block;
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $tablet-width) {
       display: none;
     }
   }
@@ -178,7 +196,7 @@
     margin: 19px auto 0;
     padding: 4px;
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $common-width) {
       @include maxSize(78px);
       margin-top: 26px;
     }
@@ -194,7 +212,7 @@
     background-color: $brand-color;
     box-shadow: 0 0 2px 2px $brand-50-color;
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $common-width) {
       @include size(28px);
       padding: 6px 0 0 1px;
       font-size: 16px;
@@ -219,7 +237,11 @@
     order: 2;
     margin-top: 46px;
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $base-width) {
+      @include maxSize(none, 465px);
+    }
+
+    @media only screen and (min-width: $tablet-width) {
       @include maxSize(925px, 465px);
       order: 3;
       align-self: center;
@@ -231,7 +253,11 @@
     @include change-computing();
     @include size(auto, 255px);
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: $base-width) {
+      @include size();
+    }
+
+    @media only screen and (min-width: $tablet-width) {
       @include maxSize(925px, 465px);
       @include size(100%, 465px);
     }
